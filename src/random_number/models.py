@@ -36,5 +36,6 @@ class BookName(models.Model):
         blank=True
     )
 
+
     def __str__(self):
         return f"BookName {self.name} ({self.pk})"
