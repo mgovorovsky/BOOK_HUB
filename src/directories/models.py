@@ -39,9 +39,10 @@ class BookName(models.Model):
     )
 
     author = models.ForeignKey(
-        Author,
+        "directories.Author",
         on_delete=models.PROTECT,
         verbose_name="Author's name",
+        related_name="book_names"
 
     )
 
@@ -62,7 +63,7 @@ class Currency(models.Model):
         max_length=3
     )
     description = models.TextField(
-        verbose_name="Currency description",
+        verbose_name="Currency descrnameiption",
         null=True,
         blank=True
     )

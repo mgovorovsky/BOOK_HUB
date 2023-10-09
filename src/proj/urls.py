@@ -15,10 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from random_number import views
+from django.urls import path, include
+from directories import views as directories_views
+from random_number import views as random_number_views
+
+
+
 
 urlpatterns = [ 
     path('admin/', admin.site.urls),
-    path('rand/', views.get_random),
+    path('director/currency/<int:pk>/', directories_views.currency_detail),
+    path('director/currency/', directories_views.currency_list),
+    path('rand/', random_number_views.get_random)
+
+
 ]
