@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from random import randint
 from . import models
 
@@ -23,26 +23,72 @@ from . import models
 #     return HttpResponse (out)
 
 def currency_detail(request, pk):
-   # references/currence/
+   # directories/currency/
     obj = models.Currency.objects.get(pk=pk)
-    return HttpResponse (f"""
-                        <h1>Currency Detail</h1>
-                        currency name: {obj.name} </br>
-                        currency description: {obj.description} </br>
-                        """)
+    context = {"obj" : obj, "verb": "detail"}
+    return render(
+        request, 
+        template_name="directories/currency_detail.html",
+        context=context
+    )
 
 def currency_list(request):
     obj_list = models.Currency.objects.all()
-    out = """<h1>Currencies: </h1>
-            <td>id</td>
-            <td>name</td>
-            <td>descriptions</td>
-            <td>actions</td>
-            """
+    context = {"object_list" : obj_list, "verb": "list"}
+    return render(
+        request, 
+        template_name="directories/currency_list.html",
+        context=context
+    )
 
-    for obj in obj_list:
-        out += f"""
-        <tr>
-        <td>{obj.pk}</td><td>{obj.name}</td><td>{obj.description}</td><td></td>
-        </tr>"""
-    return HttpResponse(out)
+def currency_create(request):
+    if request.method == "GET":
+        template_name="directories/currency_create.html",
+        context = {"verb": "create"}
+    elif request.method == "POST":
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        print(name, description)
+        obj = models.Currency.objects.create(name=name, description=description)
+        return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
+        # second way to make redirection to the success page:
+        # template_name="directories/currency_success.html",
+        # context = {"verb": "created successfully"}
+    else:
+        raise Exception ("Wrong method")
+    return render(
+        request, 
+        template_name=template_name,
+        context=context
+    )    
+
+def currency_update(request, pk):
+    if request.method == "GET":
+        template_name="directories/currency_update.html",
+        obj = models.Currency.objects.get(pk=pk)
+        context = {"obj" : obj, "verb": "update"}
+    elif request.method == "POST":
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        print(name, description)
+        obj = models.Currency.objects.create(name=name, description=description)
+        return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
+
+    else:
+        raise Exception ("Wrong method")
+    return render(
+        request, 
+        template_name=template_name,
+        context=context
+    )   
+
+
+    # for obj in obj_list:
+    #     out += f"""
+    #     <tr>
+    #     <td><a href="/directories/currency/{obj.pk}/">{obj.pk}</a></td>
+    #     <td>{obj.name}</td>
+    #     <td>{obj.description}</td>
+    #     <td></td>
+    #     </tr>"""
+    # return HttpResponse(out)
