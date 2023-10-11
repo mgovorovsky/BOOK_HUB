@@ -25,9 +25,9 @@ from random_number import views as random_number_views
 urlpatterns = [ 
     path('admin/', admin.site.urls),
     path('directories/currency/<int:pk>/', directories_views.currency_detail),
-    path('directories/currency/<int:pk>/', directories_views.currency_detail),
-    path('directories/currency/', directories_views.currency_list),
     path('directories/currency/update/<int:pk>/', directories_views.currency_update),
+    path('directories/currency/', directories_views.currency_list),
+    path('directories/currency/create/', directories_views.currency_create),
     path('rand/', random_number_views.get_random)
 
 
