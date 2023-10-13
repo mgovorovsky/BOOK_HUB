@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from random import randint
-from . import models
+from . import models, forms
+
 
 # Create your views here.
 
@@ -44,7 +45,8 @@ def currency_list(request):
 def currency_create(request):
     if request.method == "GET":
         template_name="directories/currency_create.html",
-        context = {"verb": "create"}
+        form = forms.CurrencyForm()
+        context = {"verb": "create", "form": form}
     elif request.method == "POST":
         name = request.POST.get("name")
         description = request.POST.get("description")
@@ -66,13 +68,13 @@ def currency_update(request, pk):
     if request.method == "GET":
         template_name="directories/currency_update.html",
         obj = models.Currency.objects.get(pk=pk)
-        context = {"obj" : obj, "verb": "update"}
+        context = {"obj" : obj, "verb": "Update"}
     elif request.method == "POST":
+        id = request.POST.get("id")
         name = request.POST.get("name")
         description = request.POST.get("description")
-        print(name, description)
-        obj = models.Currency.objects.create(name=name, description=description)
-        return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
+        obj = models.Currency.objects.filter(id=pk).update(name=name, description=description)
+        return HttpResponseRedirect(f"/directories/currency/")    
 
     else:
         raise Exception ("Wrong method")

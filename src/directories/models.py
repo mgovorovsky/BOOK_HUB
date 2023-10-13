@@ -60,6 +60,7 @@ class BookName(models.Model):
 class Currency(models.Model):
     name = models.CharField(
         verbose_name="Currency name",
+        unique=True,
         max_length=3
     )
     description = models.TextField(

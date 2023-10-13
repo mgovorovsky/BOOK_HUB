@@ -17,17 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from directories import views as directories_views
+from applications import views as applications_views
 from random_number import views as random_number_views
-
-
 
 
 urlpatterns = [ 
     path('admin/', admin.site.urls),
+
     path('directories/currency/<int:pk>/', directories_views.currency_detail),
     path('directories/currency/update/<int:pk>/', directories_views.currency_update),
     path('directories/currency/', directories_views.currency_list),
     path('directories/currency/create/', directories_views.currency_create),
+
+    path('applications/order/<int:pk>/', applications_views.order_detail),
+    path('applications/order/update/<int:pk>/', applications_views.order_update),
+    path('applications/order/', applications_views.order_list),
+    path('applications/order/create/', applications_views.order_create),
+
     path('rand/', random_number_views.get_random)
 
 
