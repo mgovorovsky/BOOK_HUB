@@ -43,38 +43,41 @@ def currency_list(request):
     )
 
 def currency_create(request):
+    template_name="directories/currency_create.html"
     if request.method == "GET":
-        template_name="directories/currency_create.html",
         form = forms.CurrencyForm()
         context = {"verb": "create", "form": form}
     elif request.method == "POST":
-        name = request.POST.get("name")
-        description = request.POST.get("description")
-        print(name, description)
-        obj = models.Currency.objects.create(name=name, description=description)
-        return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
-        # second way to make redirection to the success page:
-        # template_name="directories/currency_success.html",
-        # context = {"verb": "created successfully"}
+        form = forms.CurrencyForm(request.POST)
+        if form.is_valid():
+            obj = form.save_obj()
+            return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
+        else: 
+            context = {"verb": "create", "form": form}
+
     else:
         raise Exception ("Wrong method")
     return render(
-        request, 
-        template_name=template_name,
-        context=context
+            request, 
+            template_name=template_name,
+            context=context,
     )    
 
 def currency_update(request, pk):
     if request.method == "GET":
         template_name="directories/currency_update.html",
         obj = models.Currency.objects.get(pk=pk)
-        context = {"obj" : obj, "verb": "Update"}
+        form = forms.CurrencyForm({
+            "name": obj.name,
+            "description": obj.description,
+        })
+        context = {"obj" : obj, "verb": "Update", "form": form}
+
     elif request.method == "POST":
-        id = request.POST.get("id")
-        name = request.POST.get("name")
-        description = request.POST.get("description")
-        obj = models.Currency.objects.filter(id=pk).update(name=name, description=description)
-        return HttpResponseRedirect(f"/directories/currency/")    
+        form = forms.CurrencyForm(request.POST)
+        if form.is_valid():
+            form.update_obj(pk)
+            return HttpResponseRedirect(f"/directories/currency/{pk}")    
 
     else:
         raise Exception ("Wrong method")
@@ -84,13 +87,3 @@ def currency_update(request, pk):
         context=context
     )   
 
-
-    # for obj in obj_list:
-    #     out += f"""
-    #     <tr>
-    #     <td><a href="/directories/currency/{obj.pk}/">{obj.pk}</a></td>
-    #     <td>{obj.name}</td>
-    #     <td>{obj.description}</td>
-    #     <td></td>
-    #     </tr>"""
-    # return HttpResponse(out)

@@ -9,9 +9,7 @@
     <h1>Currency update: {{obj.pk}}</h1>
     <form action="" method="post">
         {% csrf_token %}
-        <input type="text" name="name" id="" value={{obj.name}}><br>
-        <input type="hidden" name="id" id="" value={{obj.pk}}><br>
-        <textarea name="description" cols="30" rows="10">{{ obj.description }}</textarea><br>
+        {{ form.as_p }}
         <button type="submit">Update</button>
     </form> 
 </body>
