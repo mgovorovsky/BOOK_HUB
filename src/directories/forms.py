@@ -38,12 +38,12 @@ class CurrencyForm(forms.Form):
             description=description
         )
 
-    class CurrencyModelForm(forms.ModelForm):
-        class Meta:
-            model = models.Currency
-            fields = [
-                'name',
-                'description'
+class CurrencyModelForm(forms.ModelForm):
+    class Meta:
+        model = models.Currency
+        fields = [
+            'name',
+            'description',
 
             ]
 

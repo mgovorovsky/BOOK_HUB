@@ -42,15 +42,18 @@ def currency_list(request):
         context=context
     )
 
+# делаем модельную форму (CurrencyModelForm - которая берет данные из класса,
+# а не из отдельной для каждого класса, еще раз описывающей поля)
 def currency_create(request):
     template_name="directories/currency_create.html"
     if request.method == "GET":
-        form = forms.CurrencyForm()
+        form = forms.CurrencyModelForm()
         context = {"verb": "create", "form": form}
     elif request.method == "POST":
-        form = forms.CurrencyForm(request.POST)
+        form = forms.CurrencyModelForm(request.POST)
         if form.is_valid():
-            obj = form.save_obj()
+            obj = form.save()
+            print(form.instance.pk)
             return HttpResponseRedirect(f"/directories/currency/{obj.pk}")
         else: 
             context = {"verb": "create", "form": form}
