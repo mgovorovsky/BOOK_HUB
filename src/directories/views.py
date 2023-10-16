@@ -2,26 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from random import randint
 from . import models, forms
+from django.contrib.auth import get_user_model
+from django.views import generic
 
-
-# Create your views here.
-
-# def take_a_look(request):
-#     author_id = request.GET.get("an_author")
-#     print(author_id)
-#     # a_book_name = models.BookName.objects.last()
-#     # the_author = a_book_name.author.name
-#     an_author = models.Author.objects.get(pk=int(author_id))
-#     authors_books = an_author.book_names.all()
-#     books = ""
-#     for book in authors_books:
-#         books += f"book name: {book.name} <br>"
-#     out  = f"""
-# <h1> The last book is: </h1>
-# books: <br>{books}
-# <a href="/director/?an_autor={int(an_author.pk) - 1}">previous author</a>
-# """
-#     return HttpResponse (out)
+User = get_user_model()
 
 def currency_detail(request, pk):
    # directories/currency/

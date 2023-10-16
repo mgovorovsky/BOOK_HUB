@@ -29,10 +29,12 @@ urlpatterns = [
     path('directories/currency/', directories_views.currency_list),
     path('directories/currency/create/', directories_views.currency_create),
 
-    path('applications/order/<int:pk>/', applications_views.order_detail),
-    path('applications/order/update/<int:pk>/', applications_views.order_update),
-    path('applications/order/', applications_views.order_list),
-    path('applications/order/create/', applications_views.order_create),
+    path('applications/order/<int:pk>/', applications_views.OrderDetail.as_view()),
+    path('applications/order/update/<int:pk>/', applications_views.OrderUpdate.as_view()),
+    path('applications/order/', applications_views.OrderList.as_view()),
+    path('applications/order/create/', applications_views.OrderCreate.as_view()),
+    path('applications/order/delete/<int:pk>/', applications_views.OrderDelete.as_view()),
+    path('about-us/', applications_views.AboutUs.as_view()),
 
     path('rand/', random_number_views.get_random)
 

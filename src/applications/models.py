@@ -26,6 +26,10 @@ class Order(models.Model):
     def __str__(self) -> str:
         return f"Order for User { self.user.username } {self.summ} {self.order_currency.name}"
 
+    # используется для всех view одинаковый
+    def get_absolute_url(self):
+        return f"/applications/order/{self.pk}/"
+
 
 
     # name = models.CharField(

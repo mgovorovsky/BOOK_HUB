@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order {{ verb }}</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Order {{ verb }} {% endblock title %}
+{% block body %}
     <table border="1">
         <tr>
             <td>ID</td>
@@ -14,15 +9,18 @@
             <td>currency</td>
             <td>Actions</td>
         </tr>
+        <a href="/applications/order/create/">Create</a>
         {% for obj in object_list %}
         <tr>
             <td><a href="/applications/order/{{ obj.pk }}">{{ obj.pk }}</a></td>
             <td>{{ obj.user }}</td>
             <td>{{ obj.summ }}</td>
             <td>{{ obj.order_currency }}</td>
-            <td><a href="/applications/order/update/{{ obj.pk }}">update</a></td>
+            <td>
+                <a href="/applications/order/update/{{ obj.pk }}">update</a>
+                <a href="/applications/order/delete/{{ obj.pk }}">delete</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
-</body>
-</html>
+    {% endblock body %}
