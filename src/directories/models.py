@@ -32,14 +32,16 @@ class Author(models.Model):
         blank=True
     )
 
-    # copyright_holder = models.ForeignKey(
-    #     "directories.CopyrightHolder",
-    #     on_delete=models.PROTECT,
-    #     verbose_name="Copyright holder name",
-    #     related_name="author_names"
+    copyright_holder = models.ForeignKey(
+        "directories.CopyrightHolder",
+        on_delete=models.PROTECT,
+        verbose_name="Copyright holder name",
+        related_name="author_names",
+        null=True,
+        blank=True
 
-    # )
-
+    )
+    
     def __str__(self):
         return f"Author {self.name} ({self.pk})"
     
@@ -67,33 +69,37 @@ class Series(models.Model):
 
 class BookName(models.Model):
     name = models.CharField(
-        verbose_name="Books",
+        verbose_name="Book name",
         max_length=255
     )
 
     author = models.ForeignKey(
         "directories.Author",
         on_delete=models.PROTECT,
-        verbose_name="Author's name",
+        verbose_name="Author name",
         related_name="book_names"
 
     )
 
-    # series = models.ForeignKey(
-    #     "directories.Series",
-    #     on_delete=models.PROTECT,
-    #     verbose_name="Series name",
-    #     related_name="book_names"
+    series = models.ForeignKey(
+        "directories.Series",
+        on_delete=models.PROTECT,
+        verbose_name="Series name",
+        related_name="book_names",
+        null=True,
+        blank=True
 
-    # )
+    )
 
-    # genre = models.ForeignKey(
-    #     "directories.Genre",
-    #     on_delete=models.PROTECT,
-    #     verbose_name="Genre name",
-    #     related_name="book_names"
+    genre = models.ForeignKey(
+        "directories.Genre",
+        on_delete=models.PROTECT,
+        verbose_name="Genre name",
+        related_name="book_names",
+        null=True,
+        blank=True
 
-    # )
+    )
 
     description = models.TextField(
         verbose_name="Book description",

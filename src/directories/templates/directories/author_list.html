@@ -6,6 +6,7 @@
             <td>ID</td>
             <td>Name</td>
             <td>Description</td>
+            <td>copyright_holder</td>
             <td>Actions</td>
         </tr>
         <a href="/directories/author/create/">Create</a>
@@ -14,6 +15,7 @@
             <td><a href="/directories/author/{{ obj.pk }}">{{ obj.pk }}</a></td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
+            <td>{{ obj.copyright_holder }}</td>
             <td>
                 <a href="/directories/author/update/{{ obj.pk }}">Update</a>
                 <a href="/directories/author/delete/{{ obj.pk }}">Delete</a>

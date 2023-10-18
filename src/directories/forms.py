@@ -53,6 +53,8 @@ class AuthorModelForm(forms.ModelForm):
         fields = [
             'name',
             'description',
+            'copyright_holder'
+
 
             ]
 
@@ -71,6 +73,8 @@ class BookNameModelForm(forms.ModelForm):
         fields = [
             'name',
             'author',
+            'series',
+            'genre',
             'description',
 
             ]

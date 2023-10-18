@@ -6,6 +6,8 @@
             <td>ID</td>
             <td>Name</td>
             <td>Author</td>
+            <td>Seires</td>
+            <td>Genre</td>
             <td>Description</td>
             <td>Actions</td>
         </tr>
@@ -15,6 +17,8 @@
             <td><a href="/directories/bookname/{{ obj.pk }}">{{ obj.pk }}</a></td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.author }}</td>
+            <td>{{ obj.series }}</td>
+            <td>{{ obj.genre }}</td>
             <td>{{ obj.description }}</td>
             <td>
                 <a href="/directories/bookname/update/{{ obj.pk }}">Update</a>
