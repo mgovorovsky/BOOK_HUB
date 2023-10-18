@@ -6,7 +6,7 @@
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Update</button>
+        <button type="submit" class="btn btn-outline-primary">Update</button>
     </form> 
     {% include "repeateded_template.html" %}
 {% endblock body %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
-    <table border="1">
+    <table class="table table-striped">
         <tr>
             <td>ID</td>
             <td>User</td>
@@ -9,16 +9,16 @@
             <td>currency</td>
             <td>Actions</td>
         </tr>
-        <a href="/applications/order/create/">Create</a>
+        <a href="/applications/order/create/" class="btn btn-outline-success">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/applications/order/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td><a href="/applications/order/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a></td>
             <td>{{ obj.user }}</td>
             <td>{{ obj.summ }}</td>
             <td>{{ obj.order_currency }}</td>
             <td>
-                <a href="/applications/order/update/{{ obj.pk }}">update</a>
-                <a href="/applications/order/delete/{{ obj.pk }}">delete</a>
+                <a href="/applications/order/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
+                <a href="/applications/order/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
             </td>
         </tr>
         {% endfor %}

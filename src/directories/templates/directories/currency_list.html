@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% block title %} Currency {{ verb }} {% endblock title %}
 {% block body %}
-    <table border="1">
+    <table class="table table-striped">
         <tr>
             <td>ID</td>
             <td>Name</td>
             <td>Description</td>
             <td>Actions</td>
         </tr>
-        <a href="/directories/currency/create/">Create</a>
+        <a href="/directories/currency/create/" class="btn btn-outline-success">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/currency/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td><a href="/directories/currency/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a> </td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
             <td>
-                <a href="/directories/currency/update/{{ obj.pk }}">Update</a>
-                <a href="/directories/currency/delete/{{ obj.pk }}">Delete</a>
+                <a href="/directories/currency/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
+                <a href="/directories/currency/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
             </td>
         </tr>
         {% endfor %}

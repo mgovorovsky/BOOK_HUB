@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Author {{ verb }} {% endblock title %}
 {% block body %}
-    <table border="1">
+    <table class="table table-striped">
         <tr>
             <td>ID</td>
             <td>Name</td>
@@ -9,16 +9,16 @@
             <td>copyright_holder</td>
             <td>Actions</td>
         </tr>
-        <a href="/directories/author/create/">Create</a>
+        <a href="/directories/author/create/" class="btn btn-outline-success">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/author/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td><a href="/directories/author/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a> </td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
             <td>{{ obj.copyright_holder }}</td>
             <td>
-                <a href="/directories/author/update/{{ obj.pk }}">Update</a>
-                <a href="/directories/author/delete/{{ obj.pk }}">Delete</a>
+                <a href="/directories/author/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
+                <a href="/directories/author/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
             </td>
         </tr>
         {% endfor %}
