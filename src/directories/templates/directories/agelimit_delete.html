@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Age limit {{ verb }} {% endblock title %}
+{% block body %}
+    {{ object }}
+    <h1>Age limit to delete:</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Age limit value: </b> {{object.name}} </br>    
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure?</button>
+    </form> 
+{% endblock body %}

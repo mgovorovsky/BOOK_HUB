@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Age limit {{ verb }} {% endblock title %}
+{% block body %}
+    <h1>Age limit Detail</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Age limit value: </b> {{object.name}} </br>    
+{% endblock body %}

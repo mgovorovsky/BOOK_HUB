@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %} Copyright Holder {{ verb }} {% endblock title %}
+{% block body %}
+    <h1>Copyright Holder Detail</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Copyright Holder name: </b> {{object.name}} </br>    
+    <b>Copyright Holder description:</b> {{object.description}} </br>
+{% endblock body %}

@@ -24,10 +24,53 @@ from random_number import views as random_number_views
 urlpatterns = [ 
     path('admin/', admin.site.urls),
 
-    path('directories/currency/<int:pk>/', directories_views.currency_detail),
-    path('directories/currency/update/<int:pk>/', directories_views.currency_update),
-    path('directories/currency/', directories_views.currency_list),
-    path('directories/currency/create/', directories_views.currency_create),
+    path('directories/currency/<int:pk>/', directories_views.CurrencyDetail.as_view()),
+    path('directories/currency/update/<int:pk>/', directories_views.CurrencyUpdate.as_view()),
+    path('directories/currency/', directories_views.CurrencyList.as_view()),
+    path('directories/currency/create/', directories_views.CurrencyCreate.as_view()),
+    path('directories/currency/delete/<int:pk>/', directories_views.CurrencyDelete.as_view()),
+
+    path('directories/author/<int:pk>/', directories_views.AuthorDetail.as_view()),
+    path('directories/author/update/<int:pk>/', directories_views.AuthorUpdate.as_view()),
+    path('directories/author/', directories_views.AuthorList.as_view()),
+    path('directories/author/create/', directories_views.AuthorCreate.as_view()),
+    path('directories/author/delete/<int:pk>/', directories_views.AuthorDelete.as_view()),
+
+    path('directories/series/<int:pk>/', directories_views.SeriesDetail.as_view()),
+    path('directories/series/update/<int:pk>/', directories_views.SeriesUpdate.as_view()),
+    path('directories/series/', directories_views.SeriesList.as_view()),
+    path('directories/series/create/', directories_views.SeriesCreate.as_view()),
+    path('directories/series/delete/<int:pk>/', directories_views.SeriesDelete.as_view()),
+
+    path('directories/bookname/<int:pk>/', directories_views.BookNameDetail.as_view()),
+    path('directories/bookname/update/<int:pk>/', directories_views.BookNameUpdate.as_view()),
+    path('directories/bookname/', directories_views.BookNameList.as_view()),
+    path('directories/bookname/create/', directories_views.BookNameCreate.as_view()),
+    path('directories/bookname/delete/<int:pk>/', directories_views.BookNameDelete.as_view()),
+
+    path('directories/rating/<int:pk>/', directories_views.RatingDetail.as_view()),
+    path('directories/rating/update/<int:pk>/', directories_views.RatingUpdate.as_view()),
+    path('directories/rating/', directories_views.RatingList.as_view()),
+    path('directories/rating/create/', directories_views.RatingCreate.as_view()),
+    path('directories/rating/delete/<int:pk>/', directories_views.RatingDelete.as_view()),
+
+    path('directories/agelimit/<int:pk>/', directories_views.AgeLimitDetail.as_view()),
+    path('directories/agelimit/update/<int:pk>/', directories_views.AgeLimitUpdate.as_view()),
+    path('directories/agelimit/', directories_views.AgeLimitList.as_view()),
+    path('directories/agelimit/create/', directories_views.AgeLimitCreate.as_view()),
+    path('directories/agelimit/delete/<int:pk>/', directories_views.AgeLimitDelete.as_view()),
+
+    path('directories/genre/<int:pk>/', directories_views.GenreDetail.as_view()),
+    path('directories/genre/update/<int:pk>/', directories_views.GenreUpdate.as_view()),
+    path('directories/genre/', directories_views.GenreList.as_view()),
+    path('directories/genre/create/', directories_views.GenreCreate.as_view()),
+    path('directories/genre/delete/<int:pk>/', directories_views.GenreDelete.as_view()),
+
+    path('directories/copyrightholder/<int:pk>/', directories_views.CopyrightHolderDetail.as_view()),
+    path('directories/copyrightholder/update/<int:pk>/', directories_views.CopyrightHolderUpdate.as_view()),
+    path('directories/copyrightholder/', directories_views.CopyrightHolderList.as_view()),
+    path('directories/copyrightholder/create/', directories_views.CopyrightHolderCreate.as_view()),
+    path('directories/copyrightholder/delete/<int:pk>/', directories_views.CopyrightHolderDelete.as_view()),
 
     path('applications/order/<int:pk>/', applications_views.OrderDetail.as_view()),
     path('applications/order/update/<int:pk>/', applications_views.OrderUpdate.as_view()),

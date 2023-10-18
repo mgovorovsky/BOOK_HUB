@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block title %} Currency {{ verb }} {% endblock title %}
 {% block body %}
-    <h1>Currency Detail</h1>
+    {{ object }}
+    <h1>Currency to delete:</h1>
     <b>ID: </b> {{object.pk}} </br>
     <b>Currency name: </b> {{object.name}} </br>    
     <b>Currency description:</b> {{object.description}} </br>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure?</button>
+    </form> 
 {% endblock body %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Currency {{ verb }} {% endblock title %}
+{% block title %}Series {{ verb }} {% endblock title %}
 {% block body %}
-    <h1>Currency create:</h1>
+    <h1>Series create:</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Age limit {{ verb }} {% endblock title %}
+{% block body %}
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Age limit</td>
+            <td>Actions</td>
+        </tr>
+        <a href="/directories/agelimit/create/">Create</a>
+        {% for obj in object_list %}
+        <tr>
+            <td><a href="/directories/agelimit/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td>{{ obj.name }}</td>
+            <td>
+                <a href="/directories/agelimit/update/{{ obj.pk }}">Update</a>
+                <a href="/directories/agelimit/delete/{{ obj.pk }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}

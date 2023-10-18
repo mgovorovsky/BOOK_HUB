@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Book Name {{ verb }} {% endblock title %}
+{% block body %}
+    {{ object }}
+    <h1>Book Name to delete:</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Book Name: </b> {{object.name}} </br>    
+    <b>Book Name description:</b> {{object.description}} </br>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure?</button>
+    </form> 
+{% endblock body %}

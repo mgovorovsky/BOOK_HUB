@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %} Rating {{ verb }} {% endblock title %}
+{% block body %}
+    <h1>Rating Detail</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Rating value: </b> {{object.name}} </br>    
+{% endblock body %}

@@ -1,22 +1,24 @@
 {% extends "base.html" %}
-{% block title %} Currency {{ verb }} {% endblock title %}
+{% block title %} Book Name {{ verb }} {% endblock title %}
 {% block body %}
     <table border="1">
         <tr>
             <td>ID</td>
             <td>Name</td>
+            <td>Author</td>
             <td>Description</td>
             <td>Actions</td>
         </tr>
-        <a href="/directories/currency/create/">Create</a>
+        <a href="/directories/bookname/create/">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/currency/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td><a href="/directories/bookname/{{ obj.pk }}">{{ obj.pk }}</a></td>
             <td>{{ obj.name }}</td>
+            <td>{{ obj.author }}</td>
             <td>{{ obj.description }}</td>
             <td>
-                <a href="/directories/currency/update/{{ obj.pk }}">Update</a>
-                <a href="/directories/currency/delete/{{ obj.pk }}">Delete</a>
+                <a href="/directories/bookname/update/{{ obj.pk }}">Update</a>
+                <a href="/directories/bookname/delete/{{ obj.pk }}">Delete</a>
             </td>
         </tr>
         {% endfor %}

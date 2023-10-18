@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} Book Name {{ verb }} {% endblock title %}
+{% block body %}
+    <h1>Book Name Detail</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Book Name: </b> {{object.name}} </br> 
+    <b>Author: </b>{{ object.author }}</br> 
+    <b>Book description:</b> {{object.description}} </br>
+{% endblock body %}

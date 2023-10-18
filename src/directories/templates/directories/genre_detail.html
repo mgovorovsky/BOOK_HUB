@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %} Genre {{ verb }} {% endblock title %}
+{% block body %}
+    <h1>Genre Detail</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Genre name: </b> {{object.name}} </br>    
+    <b>Genre description:</b> {{object.description}} </br>
+{% endblock body %}

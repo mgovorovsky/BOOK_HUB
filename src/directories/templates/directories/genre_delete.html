@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Genre {{ verb }} {% endblock title %}
+{% block body %}
+    {{ object }}
+    <h1>Genre to delete:</h1>
+    <b>ID: </b> {{object.pk}} </br>
+    <b>Genre name: </b> {{object.name}} </br>    
+    <b>Genre description:</b> {{object.description}} </br>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Are you sure?</button>
+    </form> 
+{% endblock body %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Currency {{ verb }} {% endblock title %}
+{% block title %} Copyright Holder {{ verb }} {% endblock title %}
 {% block body %}
     <table border="1">
         <tr>
@@ -8,15 +8,15 @@
             <td>Description</td>
             <td>Actions</td>
         </tr>
-        <a href="/directories/currency/create/">Create</a>
+        <a href="/directories/copyrightholder/create/">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/currency/{{ obj.pk }}">{{ obj.pk }}</a></td>
+            <td><a href="/directories/copyrightholder/{{ obj.pk }}">{{ obj.pk }}</a></td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
             <td>
-                <a href="/directories/currency/update/{{ obj.pk }}">Update</a>
-                <a href="/directories/currency/delete/{{ obj.pk }}">Delete</a>
+                <a href="/directories/copyrightholder/update/{{ obj.pk }}">Update</a>
+                <a href="/directories/copyrightholder/delete/{{ obj.pk }}">Delete</a>
             </td>
         </tr>
         {% endfor %}
