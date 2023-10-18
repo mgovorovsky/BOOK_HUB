@@ -15,7 +15,9 @@ class CopyrightHolder(models.Model):
     )
 
     def __str__(self):
-        return f"CopyrightHolder {self.name} ({self.pk})" 
+        return f"{self.name}" 
+    # def __str__(self):
+    #     return f"CopyrightHolder {self.name} ({self.pk})" 
 
 
     def get_absolute_url(self):
@@ -43,7 +45,9 @@ class Author(models.Model):
     )
     
     def __str__(self):
-        return f"Author {self.name} ({self.pk})"
+        return f"{self.name}"
+    # def __str__(self):
+    #     return f"Author {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/author/{self.pk}/"
@@ -61,7 +65,10 @@ class Series(models.Model):
     )
 
     def __str__(self):
-        return f"Series {self.name} ({self.pk})"  
+        return f"{self.name}"  
+    
+    # def __str__(self):
+    #     return f"Series {self.name} ({self.pk})"  
 
     def get_absolute_url(self):
         return f"/directories/series/{self.pk}/"      
@@ -109,7 +116,10 @@ class BookName(models.Model):
 
 
     def __str__(self):
-        return f"BookName {self.name} ({self.pk})"
+        return f"{self.name}"
+    
+    # def __str__(self):
+    #     return f"BookName {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/bookname/{self.pk}/" 
@@ -128,7 +138,10 @@ class Currency(models.Model):
     )
 
     def __str__(self):
-        return f"Currency {self.name} ({self.pk})"
+        return f"{self.name}"
+    
+    # def __str__(self):
+    #     return f"Currency {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/currency/{self.pk}/"
@@ -140,7 +153,10 @@ class Rating(models.Model):
     )
 
     def __str__(self):
-        return f"Rating {self.name} ({self.pk})"
+        return f"{self.name}"
+    
+    # def __str__(self):
+    #     return f"Rating {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/rating/{self.pk}/"
@@ -153,7 +169,10 @@ class AgeLimit(models.Model):
     )
 
     def __str__(self):
-        return f"AgeLimit {self.name} ({self.pk})"
+        return f"{self.name}"
+    
+    # def __str__(self):
+    #     return f"AgeLimit {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/agelimit/{self.pk}/"
@@ -203,7 +222,10 @@ class Genre(models.Model):
     )
 
     def __str__(self):
-        return f"Genre {self.name} ({self.pk})"
+        return f"{self.name}"
+    
+    # def __str__(self):
+    #     return f"Genre {self.name} ({self.pk})"
     
     def get_absolute_url(self):
         return f"/directories/genre/{self.pk}/"
