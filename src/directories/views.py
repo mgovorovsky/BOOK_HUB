@@ -337,7 +337,52 @@ class AgeLimitList(generic.ListView):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
+
+#BookType booktype 
+class BookTypeCreate(generic.CreateView):
+    template_name="directories/booktype_create.html"
+    model = models.BookType
+    form_class = forms.BookTypeModelForm
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
     
+class BookTypeUpdate(generic.UpdateView):
+    template_name="directories/booktype_update.html"
+    model = models.BookType
+    form_class = forms.BookTypeModelForm
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
+    
+class BookTypeDetail(generic.DetailView):
+    template_name="directories/booktype_detail.html"
+    model = models.BookType
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
+    
+class BookTypeDelete(generic.DeleteView):
+    template_name="directories/booktype_delete.html"
+    model = models.BookType
+    success_url = "/directories/booktype/" 
+
+class BookTypeList(generic.ListView):
+    template_name="directories/booktype_list.html"
+    model = models.BookType
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
+
+
 
 # Genre genre 
 class GenreCreate(generic.CreateView):

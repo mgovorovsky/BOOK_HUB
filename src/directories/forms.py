@@ -97,6 +97,14 @@ class AgeLimitModelForm(forms.ModelForm):
 
             ]
         
+class BookTypeModelForm(forms.ModelForm):
+    class Meta:
+        model = models.BookType
+        fields = [
+            'name',
+            'description',
+
+            ]        
 
 class GenreModelForm(forms.ModelForm):
     class Meta:

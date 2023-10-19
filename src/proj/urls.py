@@ -48,6 +48,12 @@ urlpatterns = [
     path('directories/bookname/create/', directories_views.BookNameCreate.as_view()),
     path('directories/bookname/delete/<int:pk>/', directories_views.BookNameDelete.as_view()),
 
+    path('directories/booktype/<int:pk>/', directories_views.BookTypeDetail.as_view()),
+    path('directories/booktype/update/<int:pk>/', directories_views.BookTypeUpdate.as_view()),
+    path('directories/booktype/', directories_views.BookTypeList.as_view()),
+    path('directories/booktype/create/', directories_views.BookTypeCreate.as_view()),
+    path('directories/booktype/delete/<int:pk>/', directories_views.BookTypeDelete.as_view()),
+
     path('directories/rating/<int:pk>/', directories_views.RatingDetail.as_view()),
     path('directories/rating/update/<int:pk>/', directories_views.RatingUpdate.as_view()),
     path('directories/rating/', directories_views.RatingList.as_view()),

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Book type {{ verb }} {% endblock title %}
+{% block body %}
+    <table class="table table-striped">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Actions</td>
+        </tr>
+        <a href="/directories/booktype/create/" class="btn btn-outline-success">Create</a>
+        {% for obj in object_list %}
+        <tr>
+            <td><a href="/directories/booktype/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a> </td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.description }}</td>
+            <td>
+                <a href="/directories/booktype/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
+                <a href="/directories/booktype/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock body %}

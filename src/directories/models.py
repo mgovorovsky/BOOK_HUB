@@ -193,20 +193,25 @@ class AgeLimit(models.Model):
 #     def __str__(self):
 #         return f"PaymentSystem {self.name} ({self.pk})"
 
-# class BookType(models.Model):
-#     name = models.CharField(
-#         verbose_name="Book type name",
-#         unique=True,
-#         max_length=255
-#     )
-#     description = models.TextField(
-#         verbose_name="Book type description",
-#         null=True,
-#         blank=True
-#     )
+class BookType(models.Model):
+    name = models.CharField(
+        verbose_name="Book type name",
+        unique=True,
+        max_length=255
+    )
+    description = models.TextField(
+        verbose_name="Book type description",
+        null=True,
+        blank=True
+    )
 
-#     def __str__(self):
-#         return f"BookType {self.name} ({self.pk})"
+    # def __str__(self):
+    #     return f"BookType {self.name} ({self.pk})"
+    def __str__(self):
+        return f"{self.pk}"
+    
+    def get_absolute_url(self):
+        return f"/directories/booktype/{self.pk}/"
 
 
 class Genre(models.Model):
