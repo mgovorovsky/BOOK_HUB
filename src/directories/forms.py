@@ -46,7 +46,11 @@ class CurrencyModelForm(forms.ModelForm):
             'description',
 
             ]
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+            
 class AuthorModelForm(forms.ModelForm):
     class Meta:
         model = models.Author
@@ -57,6 +61,11 @@ class AuthorModelForm(forms.ModelForm):
 
 
             ]
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 class SeriesModelForm(forms.ModelForm):
     class Meta:
@@ -66,7 +75,11 @@ class SeriesModelForm(forms.ModelForm):
             'description',
 
             ]
-        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+
 class BookNameModelForm(forms.ModelForm):
     class Meta:
         model = models.BookName
@@ -79,6 +92,10 @@ class BookNameModelForm(forms.ModelForm):
 
             ]
         
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 class RatingModelForm(forms.ModelForm):
     class Meta:
@@ -88,6 +105,10 @@ class RatingModelForm(forms.ModelForm):
 
             ]
         
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 class AgeLimitModelForm(forms.ModelForm):
     class Meta:
@@ -96,7 +117,12 @@ class AgeLimitModelForm(forms.ModelForm):
             'name',
 
             ]
-        
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
+
 class BookTypeModelForm(forms.ModelForm):
     class Meta:
         model = models.BookType
@@ -104,7 +130,12 @@ class BookTypeModelForm(forms.ModelForm):
             'name',
             'description',
 
-            ]        
+            ]       
+         
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 class GenreModelForm(forms.ModelForm):
     class Meta:
@@ -114,6 +145,11 @@ class GenreModelForm(forms.ModelForm):
             'description',
 
             ]
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
 
 class CopyrightHolderModelForm(forms.ModelForm):
     class Meta:
@@ -123,3 +159,8 @@ class CopyrightHolderModelForm(forms.ModelForm):
             'description',
 
             ]
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
