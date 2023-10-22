@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'random_number',
     'directories',
     'applications',
+    'orders',
 ]
-# no one more
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
