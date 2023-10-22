@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
     <h1>Order to delete</h1>
     <b>ID: </b> {{object.pk}} </br>
     <b>user: </b> {{object.user}} </br>
+    <b>Book name:</b> {{object.order_bookname.name}} </br>
     <b>Order summ: </b> {{object.summ}} </br>    
     <b>Order currency:</b> {{object.order_currency.name}} </br>
     <form action="" method="post">

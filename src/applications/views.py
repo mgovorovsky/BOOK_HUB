@@ -6,7 +6,7 @@ from directories import models as directories_models
 from django.contrib.auth import get_user_model
 from django.views import generic
 
-# User = get_user_model()
+User = get_user_model()
 
 # def order_detail(request, pk):
 #     obj = models.Order.objects.get(pk=pk)

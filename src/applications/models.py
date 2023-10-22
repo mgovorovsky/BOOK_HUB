@@ -9,6 +9,13 @@ class Order(models.Model):
         verbose_name="Customer",
         on_delete=models.PROTECT
     )
+
+    order_bookname = models.ForeignKey(
+        "directories.BookName",
+        verbose_name="Book name",
+        on_delete=models.PROTECT
+    )
+
     summ  = models.DecimalField(
         verbose_name="Order summ",
         max_digits=6,
@@ -26,8 +33,6 @@ class Order(models.Model):
         upload_to="order_images/%Y/%m/%d",
 
     )
-
-    # сделать ссылку на табличку с книжками
 
     def __str__(self) -> str:
         return f"Order for User { self.user.username } {self.summ} {self.order_currency.name}"

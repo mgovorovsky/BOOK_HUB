@@ -7,7 +7,7 @@ admin.site.register(models.BookName)
 admin.site.register(models.Rating)
 admin.site.register(models.AgeLimit)
 # admin.site.register(models.PaymentSystem)
-# admin.site.register(models.BookType)
+admin.site.register(models.BookType)
 admin.site.register(models.Genre)
 admin.site.register(models.CopyrightHolder)
 

@@ -19,6 +19,8 @@ from django.urls import path, include
 from directories import views as directories_views
 from applications import views as applications_views
 from random_number import views as random_number_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [ 
@@ -88,4 +90,6 @@ urlpatterns = [
     path('rand/', random_number_views.get_random)
 
 
-]
+] 
+if not settings.IS_PRODUCTION:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

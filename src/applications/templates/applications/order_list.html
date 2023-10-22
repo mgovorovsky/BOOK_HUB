@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
     <table class="table table-striped">
         <tr>
             <td>ID</td>
             <td>User</td>
+            <td>Book name</td>
             <td>summ</td>
             <td>currency</td>
             <td>Actions</td>
@@ -14,6 +16,7 @@
         <tr>
             <td><a href="/applications/order/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a></td>
             <td>{{ obj.user }}</td>
+            <td>{{ obj.order_bookname }}</td>
             <td>{{ obj.summ }}</td>
             <td>{{ obj.order_currency }}</td>
             <td>

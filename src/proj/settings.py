@@ -26,6 +26,8 @@ SECRET_KEY = local_settings.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = local_settings.DEBUG
 
+IS_PRODUCTION =local_settings.IS_PRODUCTION
+
 ALLOWED_HOSTS = ['mgovorovsky.pythonanywhere.com', '127.0.0.1']
 
 
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'random_number',
     'directories',
     'applications',
@@ -125,10 +129,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/mgovorovsky/static'
-MEDIA_ROOT = '/home/mgovorovsky/media'
+STATIC_ROOT = '/home/mgovorovsky/static' #для сервера
+MEDIA_ROOT = local_settings.MEDIA_ROOT
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

@@ -1,18 +1,31 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load my_custom_tags %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
     <h1>Order detail</h1>
-    <b>ID: </b> {{object.pk}} </br>
-    <b>user: </b> {{object.user}} </br>
-    <b>Order summ: </b> {{object.summ}} </br>    
-    <b>Order currency:</b> {{object.order_currency.name}} </br>
-    
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row">
+      <div class="col-5">
+        <b>ID: </b> {{object.pk}} </br>
+        <b>user: </b> {{object.user}} </br>
+        <b>Book name:</b> {{object.order_bookname.name}} </br>
+        <b>Order summ: </b> {{object.summ}} </br>    
+        <b>Order currency:</b> {{object.order_currency.name}} </br>
+       
+        {% a_plus_b 5 5 %}
+        {{ object.user|multiplier:3 }}
+
+      </div>  
+      <div class="col-2">
+      </div>
+      <div class="col-5">
+        <div class="card" style="width: 18rem;">
+          <img src="{{object.cover.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+    </div>
 {% endblock body %}

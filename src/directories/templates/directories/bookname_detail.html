@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block title %} Book Name {{ verb }} {% endblock title %}
 {% block body %}
     <h1>Book Name Detail</h1>
@@ -6,6 +7,6 @@
     <b>Book Name: </b> {{object.name}} </br> 
     <b>Author: </b>{{ object.author }}</br> 
     <b>Series: </b>{{ object.series }}</br> 
-    <b>Genre: </b>{{ object.Genre }}</br> 
+    <b>Genre: </b>{{ object.genre }}</br> 
     <b>Book description:</b> {{object.description}} </br>
 {% endblock body %}

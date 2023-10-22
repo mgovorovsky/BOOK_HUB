@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block title %}Series {{ verb }} {% endblock title %}
 {% block body %}
     <h1>Series create:</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form | crispy }}
         <button type="submit" class="btn btn-outline-success">Create</button>
     </form> 
 {% endblock body %}
