@@ -6,7 +6,65 @@ from directories import models as directories_models
 from django.contrib.auth import get_user_model
 from django.views import generic
 
-User = get_user_model()
+class OrderCreate(generic.CreateView):
+    template_name="applications/order_create.html"
+    model = models.Order
+    form_class = forms.OrderModelForm
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "create"
+        return context
+
+class OrderUpdate(generic.UpdateView):
+    template_name="applications/order_update.html"
+    model = models.Order
+    form_class = forms.OrderModelForm
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "update"
+        return context
+
+    # добавляем редирект урл для конкретной вью
+    # def get_success_url(self):
+    #     return f"/applications/order/{self.object.pk}/" 
+
+
+class OrderDetail(generic.DetailView):
+    template_name="applications/order_detail.html"
+    model = models.Order
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
+    
+class OrderDelete(generic.DeleteView):
+    template_name="applications/order_delete.html"
+    model = models.Order
+    success_url = "/applications/order/" 
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "delete"
+        return context
+
+class OrderList(generic.ListView):
+    template_name="applications/order_list.html"
+    model = models.Order
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "list"
+        return context
+ 
+    
+class AboutUs(generic.TemplateView):
+    template_name = "about_us.html"
+
+
+# User = get_user_model()
 
 # def order_detail(request, pk):
 #     obj = models.Order.objects.get(pk=pk)
@@ -77,55 +135,3 @@ User = get_user_model()
 #         template_name=template_name,
 #         context=context
 #     )  
-
-class OrderCreate(generic.CreateView):
-    template_name="applications/order_create.html"
-    model = models.Order
-    form_class = forms.OrderModelForm
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context["verb"] = "detail"
-        return context
-
-class OrderUpdate(generic.UpdateView):
-    template_name="applications/order_update.html"
-    model = models.Order
-    form_class = forms.OrderModelForm
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context["verb"] = "detail"
-        return context
-
-    # добавляем редирект урл для конкретной вью
-    # def get_success_url(self):
-    #     return f"/applications/order/{self.object.pk}/" 
-
-
-class OrderDetail(generic.DetailView):
-    template_name="applications/order_detail.html"
-    model = models.Order
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context["verb"] = "detail"
-        return context
-    
-class OrderDelete(generic.DeleteView):
-    template_name="applications/order_delete.html"
-    model = models.Order
-    success_url = "/applications/order/" 
-
-class OrderList(generic.ListView):
-    template_name="applications/order_list.html"
-    model = models.Order
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context["verb"] = "detail"
-        return context
- 
-    
-class AboutUs(generic.TemplateView):
-    template_name = "about_us.html"

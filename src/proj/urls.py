@@ -92,4 +92,4 @@ urlpatterns = [
 
 ] 
 if not settings.IS_PRODUCTION:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
