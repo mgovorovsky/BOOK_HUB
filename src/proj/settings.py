@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'directories',
     'applications',
 ]
+# no one more
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
