@@ -3,7 +3,7 @@
 {% block body %}
     {{ object }}
     <h1>Order update:</h1>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-outline-primary">Update</button>

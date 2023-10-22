@@ -21,6 +21,12 @@ class Order(models.Model):
         on_delete=models.PROTECT
     )
 
+    cover = models.ImageField(
+        verbose_name="Order Cover",
+        upload_to="order_images/%Y/%m/%d",
+
+    )
+
     # сделать ссылку на табличку с книжками
 
     def __str__(self) -> str:

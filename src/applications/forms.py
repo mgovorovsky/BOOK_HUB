@@ -8,7 +8,8 @@ class OrderModelForm(forms.ModelForm):
         fields = [
             'user',
             'summ',
-            'order_currency'
+            'order_currency',
+            'cover',
         ]
 
     def __init__(self, *args, **kwargs):
