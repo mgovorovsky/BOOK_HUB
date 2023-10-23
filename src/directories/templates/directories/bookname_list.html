@@ -9,8 +9,9 @@
             <td>Author</td>
             <td>Seires</td>
             <td>Genre</td>
+            <td>Price</td>
             <td>Description</td>
-            <td>Actions</td>
+                        <td>Actions</td>
         </tr>
         <a href="/directories/bookname/create/" class="btn btn-outline-success">Create</a>
         {% for obj in object_list %}
@@ -20,6 +21,7 @@
             <td>{{ obj.author }}</td>
             <td>{{ obj.series }}</td>
             <td>{{ obj.genre }}</td>
+            <td>{{ obj.price }}</td>
             <td>{{ obj.description }}</td>
             <td>
                 <a href="/directories/bookname/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>

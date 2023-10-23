@@ -39,7 +39,9 @@ class BookNameModelForm(forms.ModelForm):
             'author',
             'series',
             'genre',
+            'price',
             'description',
+            'cover',
 
             ]
 

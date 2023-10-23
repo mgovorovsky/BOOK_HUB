@@ -3,10 +3,32 @@
 {% block title %} Book Name {{ verb }} {% endblock title %}
 {% block body %}
     <h1>Book Name Detail</h1>
-    <b>ID: </b> {{object.pk}} </br>
-    <b>Book Name: </b> {{object.name}} </br> 
-    <b>Author: </b>{{ object.author }}</br> 
-    <b>Series: </b>{{ object.series }}</br> 
-    <b>Genre: </b>{{ object.genre }}</br> 
-    <b>Book description:</b> {{object.description}} </br>
-{% endblock body %}
+    <div class="row">
+        <div class="col-5">
+            <b>ID: </b> {{object.pk}} </br>
+            <b>Book Name: </b> {{object.name}} </br> 
+            <b>Author: </b>{{ object.author }}</br> 
+            <b>Series: </b>{{ object.series }}</br> 
+            <b>Genre: </b>{{ object.genre }}</br> 
+            <b>Price: </b>{{ object.price }}</br> 
+            <b>Book description:</b> {{object.description}} </br>
+            <form action="" method="get">
+                <input type="number" name="quantity" step="1" min="1" value="1">
+                <input type="hidden" name="good" value="{{object.pk}}">
+                <button class="btn btn-outline-success">Add to cart</button>
+            </form>
+        </div>  
+        <div class="col-2">
+        </div>
+        <div class="col-5">
+          <div class="card" style="width: 18rem;">
+            <img src="{{object.cover.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{object.name}}</h5>
+              <p class="card-text">{{object.author.name}}</p>
+              <a href="/applications/order" class="btn btn-outline-success">Купить в 1 клик</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock body %}

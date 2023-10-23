@@ -114,6 +114,19 @@ class BookName(models.Model):
         blank=True
     )
 
+    price = models.DecimalField(
+        verbose_name="Book price",
+        max_digits=6,
+        decimal_places=2,
+        default=1
+    )
+
+    cover = models.ImageField(
+        verbose_name="Order Cover",
+        upload_to="order_images/%Y/%m/%d",
+        default=1
+
+    )
 
     def __str__(self):
         return f"{self.name}"
