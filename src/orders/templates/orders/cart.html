@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Cart {{ verb }} {% endblock title %}
+{% block body %}
+    <h3>Cart</h3>
+    <table class="table table-striped">
+        <tr>
+            <td>Book</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Total price</td>
+            <td>Actions</td>
+        </tr>
+        {% for good_in_cart in cart.goods.all %}
+        <tr>
+            <td>{{ good_in_cart.good.name }}</td > 
+            <td><form action="/orders/cart">
+                    <div class="input-group mb-1">
+                        <input class="form-control" type="number" name="quantity" min="0" step="1" value="{{ good_in_cart.quantity }}">
+                        <button type="submit" class="btn btn-outline-secondary">Ok</button>
+                    </div>
+                    <input type="hidden" name="good" value="{{ good_in_cart.good.pk }}">
+                    <input type="hidden" name="action" value="edit">
+        
+                </form>
+            </td>
+            </td> 
+            <td>{{ good_in_cart.price }}</td>
+            <td>{{ good_in_cart.total_price }}</td>
+            <td>
+                <form action="/orders/cart-delete-good/{{good_in_cart.pk}}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                </form> 
+
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Total:</td>
+            <td colspan="2">{{ cart.good_quantity }}</td>
+            <td colspan="2">{{ cart.total_price }}</td>
+        </tr>
+    </table>
+        <a href="" class="btn btn-outline-success">Create order</a>
+
+
+
+{% endblock body %}
+

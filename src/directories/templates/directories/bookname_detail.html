@@ -12,7 +12,7 @@
             <b>Genre: </b>{{ object.genre }}</br> 
             <b>Price: </b>{{ object.price }}</br> 
             <b>Book description:</b> {{object.description}} </br>
-            <form action="" method="get">
+            <form action="/orders/cart" method="get">
                 <input type="number" name="quantity" step="1" min="1" value="1">
                 <input type="hidden" name="good" value="{{object.pk}}">
                 <button class="btn btn-outline-success">Add to cart</button>
@@ -26,7 +26,7 @@
             <div class="card-body">
               <h5 class="card-title">{{object.name}}</h5>
               <p class="card-text">{{object.author.name}}</p>
-              <a href="/applications/order" class="btn btn-outline-success">Купить в 1 клик</a>
+              <a href="/applications/order" class="btn btn-outline-success">Buy in 1 click</a>
           </div>
         </div>
       </div>

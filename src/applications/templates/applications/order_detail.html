@@ -13,6 +13,9 @@
         <b>Order currency:</b> {{object.order_currency.name}} </br>
        
         {% a_plus_b 5 5 %}
+        {% currency_value %}
+
+        
         {{ object.user|multiplier:3 }}
 
       </div>  
@@ -24,7 +27,7 @@
           <div class="card-body">
             <h5 class="card-title">{{object.order_bookname.name}}</h5>
             <p class="card-text">{{object.order_bookname.author.name}}</p>
-            <a href="/applications/order" class="btn btn-outline-success">Купить в 1 клик</a>
+            <a href="/applications/order" class="btn btn-outline-success">Buy in 1 click</a>
         </div>
       </div>
     </div>

@@ -67,6 +67,14 @@ class GoodInCart(models.Model):
     @property
     def total_price(self):
         return self.quantity * self.good.price
+    
+
+# class Order(models.Model):
+#     cart = models.ForeignKey(
+#         Cart
+#     )
+#     delivery_adress = 
+#     summ = 
 
 
 

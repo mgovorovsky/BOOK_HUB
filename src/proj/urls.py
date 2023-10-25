@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from directories import views as directories_views
 from applications import views as applications_views
+from orders import views as orders_views
 from random_number import views as random_number_views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -87,7 +88,10 @@ urlpatterns = [
     path('applications/order/delete/<int:pk>/', applications_views.OrderDelete.as_view()),
     path('about-us/', applications_views.AboutUs.as_view()),
 
-    path('rand/', random_number_views.get_random)
+    path('orders/cart/', orders_views.cart),
+    path('orders/cart-delete-good/<int:pk>', orders_views.DeleteGoodInCart.as_view()),
+
+    path('rand/', random_number_views.get_random), 
 
 
 ] 
