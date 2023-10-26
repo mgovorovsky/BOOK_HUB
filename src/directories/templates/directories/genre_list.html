@@ -4,7 +4,7 @@
 {% block body %}
     <table class="table table-striped">
         <tr>
-            <td>ID</td>
+            <td>Select</td>
             <td>Name</td>
             <td>Description</td>
             <td>Actions</td>
@@ -12,7 +12,7 @@
         <a href="/directories/genre/create/" class="btn btn-outline-success">Create</a>
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/genre/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a> </td>
+            <td><a href="/directories/genre/{{ obj.pk }}" class="btn btn-outline-primary">{{ obj.pk }}</a> </td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
             <td>

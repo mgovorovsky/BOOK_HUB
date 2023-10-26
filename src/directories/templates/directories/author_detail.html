@@ -7,4 +7,28 @@
     <b>Author name: </b> {{object.name}} </br>    
     <b>Author description:</b> {{object.description}} </br>
     <b>Copyright holder</b> {{object.copyright_holder}} </br>
+    
+    <table class="table table-striped">
+        <tr>
+            <td>Select</td>
+            <td>Book name</td>
+            <td>Genre</td>
+            <td>Quantity</td>
+            <td>Price</td>
+
+        </tr>
+        <br>
+
+        {% for bookname in author.book_names.all %}
+        <tr>
+            <td><a href="/directories/bookname/{{ bookname.pk }}" class="btn btn-outline-primary">{{bookname.pk}}</a> </td>
+            <td>{{ bookname }}</td>
+            <td>{{ bookname.genre }}</td>
+            <td> - </td>
+            <td> {{ bookname.price }} </td>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock body %}

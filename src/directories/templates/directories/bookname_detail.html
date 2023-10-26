@@ -10,12 +10,13 @@
             <b>Author: </b>{{ object.author }}</br> 
             <b>Series: </b>{{ object.series }}</br> 
             <b>Genre: </b>{{ object.genre }}</br> 
+            <b>Book type: </b>{{ object.booktypename }}</br>
             <b>Price: </b>{{ object.price }}</br> 
             <b>Book description:</b> {{object.description}} </br>
             <form action="/orders/cart" method="get">
                 <input type="number" name="quantity" step="1" min="1" value="1">
                 <input type="hidden" name="good" value="{{object.pk}}">
-                <button class="btn btn-outline-success">Add to cart</button>
+                <button class="btn btn-outline-primary">Add to cart</button>
             </form>
         </div>  
         <div class="col-2">
@@ -26,9 +27,10 @@
             <div class="card-body">
               <h5 class="card-title">{{object.name}}</h5>
               <p class="card-text">{{object.author.name}}</p>
-              <a href="/applications/order" class="btn btn-outline-success">Buy in 1 click</a>
+              <!-- <a href="/applications/order" class="btn btn-outline-success">Buy in 1 click</a> -->
           </div>
         </div>
       </div>
     </div>
+    <br>
     {% endblock body %}

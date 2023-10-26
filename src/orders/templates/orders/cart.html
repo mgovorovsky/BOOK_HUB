@@ -32,7 +32,6 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-danger">Delete</button>
                 </form> 
-
             </td>
         </tr>
         {% endfor %}
@@ -42,6 +41,7 @@
             <td colspan="2">{{ cart.total_price }}</td>
         </tr>
     </table>
+        <a href="/directories/bookname/" class="btn btn-outline-primary">Add a book</a>
         <a href="" class="btn btn-outline-success">Create order</a>
 
 

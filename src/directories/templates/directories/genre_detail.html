@@ -6,4 +6,28 @@
     <b>ID: </b> {{object.pk}} </br>
     <b>Genre name: </b> {{object.name}} </br>    
     <b>Genre description:</b> {{object.description}} </br>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Select</td>
+            <td>Book name</td>
+            <td>Author</td>
+            <td>Quantity</td>
+            <td>Price</td>
+
+        </tr>
+        <br>
+
+        {% for bookname in genre.book_names.all %}
+        <tr>
+            <td><a href="/directories/bookname/{{ bookname.pk }}" class="btn btn-outline-primary">{{bookname.pk}}</a> </td>
+            <td>{{ bookname }}</td>
+            <td>{{ bookname.author }}</td>
+            <td> - </td>
+            <td> {{ bookname.price }} </td>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock body %}

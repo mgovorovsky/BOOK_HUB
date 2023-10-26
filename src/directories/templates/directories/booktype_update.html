@@ -2,7 +2,6 @@
 {% load crispy_forms_tags %}
 {% block title %} Book type {{ verb }} {% endblock title %}
 {% block body %}
-    {{ object }}
     <h1>Book type update:</h1>
     <form action="" method="post">
         {% csrf_token %}

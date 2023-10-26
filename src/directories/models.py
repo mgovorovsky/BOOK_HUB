@@ -98,6 +98,26 @@ class BookName(models.Model):
 
     )
 
+    booktypename = models.ForeignKey(
+        "directories.BookType",
+        on_delete=models.PROTECT,
+        verbose_name="Book type name",
+        related_name="book_names",
+        null=True,
+        blank=True
+
+    )
+
+    rating = models.ForeignKey(
+        "directories.Rating",
+        on_delete=models.PROTECT,
+        verbose_name="Rating value",
+        related_name="book_names",
+        null=True,
+        blank=True
+
+    )
+
     genre = models.ForeignKey(
         "directories.Genre",
         on_delete=models.PROTECT,
@@ -160,9 +180,10 @@ class Currency(models.Model):
         return f"/directories/currency/{self.pk}/"
 
 class Rating(models.Model):
-    name = models.IntegerField(
-        verbose_name="Rating",
+    name = models.CharField(
+        verbose_name="Rating value",
         unique=True,
+        max_length=3
     )
 
     def __str__(self):

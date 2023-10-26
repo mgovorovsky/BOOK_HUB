@@ -4,6 +4,30 @@
 {% block body %}
     <h1>Book type Detail</h1>
     <b>ID: </b> {{object.pk}} </br>
-    <b>Book type name: </b> {{object.name}} </br>    
+    <b>Book type: </b> {{object.name}} </br>    
     <b>Book type description:</b> {{object.description}} </br>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Select</td>
+            <td>Book name</td>
+            <td>Author</td>
+            <td>Quantity</td>
+            <td>Price</td>
+
+        </tr>
+        <br>
+
+        {% for bookname in booktypename.book_names.all %}
+        <tr>
+            <td><a href="/directories/bookname/{{ bookname.pk }}" class="btn btn-outline-primary">{{bookname.pk}}</a> </td>
+            <td>{{ bookname }}</td>
+            <td>{{ bookname.author }}</td>
+            <td> - </td>
+            <td> {{ bookname.price }} </td>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock body %}
