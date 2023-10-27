@@ -98,7 +98,7 @@ class BookName(models.Model):
 
     )
 
-    booktypename = models.ForeignKey(
+    booktype = models.ForeignKey(
         "directories.BookType",
         on_delete=models.PROTECT,
         verbose_name="Book type name",
