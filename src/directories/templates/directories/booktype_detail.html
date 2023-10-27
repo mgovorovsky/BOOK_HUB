@@ -18,7 +18,7 @@
         </tr>
         <br>
 
-        {% for bookname in booktypename.book_names.all %}
+        {% for bookname in booktype.book_names.all %}
         <tr>
             <td><a href="/directories/bookname/{{ bookname.pk }}" class="btn btn-outline-primary">{{bookname.pk}}</a> </td>
             <td>{{ bookname }}</td>

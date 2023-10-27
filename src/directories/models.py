@@ -242,7 +242,7 @@ class BookType(models.Model):
     # def __str__(self):
     #     return f"BookType {self.name} ({self.pk})"
     def __str__(self):
-        return f"{self.pk}"
+        return f"{self.name}"
     
     def get_absolute_url(self):
         return f"/directories/booktype/{self.pk}/"
