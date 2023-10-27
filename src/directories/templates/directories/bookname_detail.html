@@ -10,9 +10,12 @@
             <b>Author: </b>{{ object.author }}</br> 
             <b>Series: </b>{{ object.series }}</br> 
             <b>Genre: </b>{{ object.genre }}</br> 
-            <b>Book type: </b>{{ object.booktypename }}</br>
+            <b>Book type: </b>{{ object.booktype }}</br>
+            <b>Rating: </b>{{ object.rating }}</br>
+            <b>Age limit: </b>{{ object.agelimit }}</br>
             <b>Price: </b>{{ object.price }}</br> 
             <b>Book description:</b> {{object.description}} </br>
+            <br>
             <form action="/orders/cart" method="get">
                 <input type="number" name="quantity" step="1" min="1" value="1">
                 <input type="hidden" name="good" value="{{object.pk}}">

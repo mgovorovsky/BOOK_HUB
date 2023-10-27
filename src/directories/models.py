@@ -128,6 +128,16 @@ class BookName(models.Model):
 
     )
 
+    agelimit = models.ForeignKey(
+        "directories.AgeLimit",
+        on_delete=models.PROTECT,
+        verbose_name="Age limit",
+        related_name="book_names",
+        null=True,
+        blank=True
+
+    )
+
     description = models.TextField(
         verbose_name="Book description",
         null=True,

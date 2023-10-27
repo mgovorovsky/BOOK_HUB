@@ -41,6 +41,7 @@ class BookNameModelForm(forms.ModelForm):
             'genre',
             'booktype',
             'rating',
+            'agelimit',
             'price',
             'description',
             'cover',

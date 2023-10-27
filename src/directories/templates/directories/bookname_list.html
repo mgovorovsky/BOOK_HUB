@@ -9,9 +9,8 @@
             <td>Author</td>
             <td>Seires</td>
             <td>Genre</td>
-            <td>Book type</td>
             <td>Price</td>
-            <td>Description</td>
+            <td>Rating</td>
             <td>Actions</td>
         </tr>
         <a href="/directories/bookname/create/" class="btn btn-outline-success">Create</a>
@@ -22,9 +21,8 @@
             <td>{{ object.author }}</td>
             <td>{{ object.series }}</td>
             <td>{{ object.genre }}</td>
-            <td>{{ object.booktypename }}</td>
             <td>{{ object.price }}</td>
-            <td>{{ object.description }}</td>
+            <td>{{ object.rating }}</td>
             <td>
                 <a href="/directories/bookname/update/{{ object.pk }}" class="btn btn-outline-primary">Update</a>
                 <a href="/directories/bookname/delete/{{ object.pk }}" class="btn btn-outline-danger">Delete</a>
