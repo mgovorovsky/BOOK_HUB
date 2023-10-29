@@ -3,9 +3,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from random import randint
 from . import models, forms
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
 User = get_user_model()
+
 
 class CurrencyCreate(generic.CreateView):
     template_name="directories/currency_create.html"
@@ -30,6 +33,7 @@ class CurrencyUpdate(generic.UpdateView):
 class CurrencyDetail(generic.DetailView):
     template_name="directories/currency_detail.html"
     model = models.Currency
+    login_url = "admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -404,6 +408,21 @@ class CopyrightHolderList(generic.ListView):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
+    
+
+
+def book_types(request):
+    object = models.BookType.objects
+    author = models.BookName.author
+    genre = models.BookName.genre
+    price = models.BookName.price
+    rating = models.BookName.rating
+
+    return render(
+        request, 
+        template_name="directories/booktype_main.html",
+        context={"object": object, "author": author, "genre": genre, "price": price, "rating": rating}
+    )
 
 # def currency_detail(request, pk):
 #    # directories/currency/

@@ -3,32 +3,32 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/directories/booktype">Book Hub</a>
+        <a class="navbar-brand" href="/directories/booktype/main">Book Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/directories/bookname">Books</a>
+              <a {% if request.resolver_match.route == "directories/bookname/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/directories/bookname">Books</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/directories/genre">Genres</a>
+              <a {% if request.resolver_match.route == "directories/genre/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/directories/genre">Genres</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/directories/author">Authors</a>
+              <a {% if request.resolver_match.route == "directories/author/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/directories/author">Authors</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="#">Profile</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/orders/cart">Cart</a>
+              <a {% if request.resolver_match.route == "orders/cart/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/orders/cart">Cart</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Portal</a>
+              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="#">Portal</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/admin">Login</a>
+              <a {% if request.resolver_match.route == "admin/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/admin">Login</a> 
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" aria-disabled="true" 

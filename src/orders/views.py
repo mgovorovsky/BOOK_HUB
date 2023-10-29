@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import UpdateView, DeleteView
-from . import models
+from . import models, forms
 from directories import models as good_model 
+from django.views import generic
 
 def update_cart(request):
     cart = None
@@ -52,6 +53,8 @@ def update_cart(request):
             cart = cart[0]
     return cart
 
+
+
 def cart(request):
     cart = update_cart(request)
     return render(
@@ -69,3 +72,41 @@ class Cart(UpdateView):
 class DeleteGoodInCart(DeleteView):
     model = models.GoodInCart
     success_url = "/orders/cart"
+
+
+# def ordered_cart(request):
+#     cart = update_cart(request)
+#     return render(
+#         request=request,
+#         template_name="orders/order.html",
+#         context={"cart": cart},
+
+#     )
+
+def order_success(request):
+    cart_id = request.session.get("cart_id")
+    if cart_id == None:
+        return render(
+            request=request,
+            template_name="orders/order_empty.html",
+        )
+    
+    else:
+        del request.session["cart_id"]
+        return render(
+            request=request,
+            template_name="orders/order_success.html",
+        
+        )
+    
+class OrderCreate(generic.CreateView):
+    template_name="orders/order_data.html"
+    model = models.Order
+    form_class = forms.OrderModelForm
+
+    cart = {"pk": 123}
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        context["cart"] = cart
+        return context

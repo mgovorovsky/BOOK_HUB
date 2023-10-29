@@ -19,5 +19,17 @@ class GoodInCartAdmin(admin.ModelAdmin):
         'total_price',
     ]
     
+
+# class OrderAdmin(admin.ModelAdmin):
+#     list_display = [
+#         'cart',
+#         'delivery_adress',
+#         'email',
+#         'telephone_number',
+#     ]
+
+
 admin.site.register(models.GoodInCart, GoodInCartAdmin)   
 admin.site.register(models.Cart, CartAdmin)
+admin.site.register(models.Order) 
+# , OrderAdmin)

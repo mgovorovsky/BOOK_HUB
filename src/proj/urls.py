@@ -54,6 +54,7 @@ urlpatterns = [
     path('directories/booktype/<int:pk>/', directories_views.BookTypeDetail.as_view()),
     path('directories/booktype/update/<int:pk>/', directories_views.BookTypeUpdate.as_view()),
     path('directories/booktype/', directories_views.BookTypeList.as_view()),
+    path('directories/booktype/main/', directories_views.book_types),
     path('directories/booktype/create/', directories_views.BookTypeCreate.as_view()),
     path('directories/booktype/delete/<int:pk>/', directories_views.BookTypeDelete.as_view()),
 
@@ -89,11 +90,18 @@ urlpatterns = [
     path('about-us/', applications_views.AboutUs.as_view()),
 
     path('orders/cart/', orders_views.cart),
+    #path('orders/cart/', orders_views.ordered_cart),
+
     path('orders/cart-delete-good/<int:pk>', orders_views.DeleteGoodInCart.as_view()),
+
+    path('orders/order_success/', orders_views.order_success),
+    path('orders/order_data/', orders_views.OrderCreate.as_view()),
+    path('orders/order_empty/', orders_views.order_success),
 
     path('rand/', random_number_views.get_random), 
 
 
 ] 
+
 if not settings.IS_PRODUCTION:
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

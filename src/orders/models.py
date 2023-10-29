@@ -69,12 +69,27 @@ class GoodInCart(models.Model):
         return self.quantity * self.good.price
     
 
-# class Order(models.Model):
-#     cart = models.ForeignKey(
-#         Cart
-#     )
-#     delivery_adress = 
-#     summ = 
+class Order(models.Model):
+    cart = models.ForeignKey(
+        Cart,
+        verbose_name="Cart",
+        on_delete=models.PROTECT
+    )
+
+    delivery_adress=models.TextField(
+        verbose_name="Delivery adress",
+
+    )
+
+    email=models.EmailField(
+        verbose_name="Email",
+
+    )
+
+    telephone_number=models.PositiveIntegerField(
+        verbose_name="Telephone number", 
+        
+    ) 
 
 
 

@@ -2,6 +2,7 @@ from django import template
 import requests
 from django.http import HttpResponse
 from datetime import date
+from orders import views as order_view
 
 register = template.Library()
 
@@ -22,3 +23,4 @@ def currency_value():
     usd_value = data.get("Cur_OfficialRate")
     # date_today = date.today()
     return (f"{usd_value} ") # ({date_today} UTC) 
+

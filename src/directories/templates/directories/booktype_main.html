@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block title %} Book type {{ verb }} {% endblock title %}
+{% block body %}
+
+
+{% for object in object.all %}
+{% if forloop.counter < 4 %}
+<div class="container py-3">
+    <header>
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">            
+            {{ object.name }}</h1>
+        <!-- <p class="fs-5 text-body-secondary">
+          topic_text</p> -->
+      </div>
+    </header>
+    
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    {% for bookname in object.book_names.all %}
+        {% if forloop.counter < 4 %}
+      
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{ bookname }}</h4></td>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                {{ bookname.price }}<small class="text-body-secondary fw-light">/BYN</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>{{ bookname.author }}</li>
+                <li>{{ bookname.genre }}</li>
+                <li>Rating {{ bookname.rating }}</li>
+              </ul>
+              <a href="/directories/bookname/{{ bookname.pk }}" class="w-100 btn btn-lg btn-outline-primary">Buy</a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% endfor %}
+{% endblock body %}

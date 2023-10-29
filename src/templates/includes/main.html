@@ -1,0 +1,138 @@
+  {% load static %}
+  {% load my_custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'includes/css_js.html' %}
+    {% block head %}
+    {% endblock head %}
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <meta mane="theme-color" content="#712cf9">
+</head>
+
+<body class="d-flex flex-column h-100">
+    {% include 'includes/theme_selector.html' %}
+    {% include 'includes/header.html' %}
+
+      <main class="content flex-shrink-0">
+        <div class="container">
+            {% block body %}
+
+
+
+            <div class="container py-3">
+              <header>
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                  <h1 class="display-4 fw-normal text-body-emphasis">            
+                    {% block head_of_topic %}
+                    {% endblock head_of_topic %}</h1>
+                  <p class="fs-5 text-body-secondary">
+                    {% block topic_text %}
+                    {% endblock topic_text %}</p>
+                </div>
+              </header>
+              
+              <main>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                  <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                      <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">
+                          {% block name_1 %}
+                          {% endblock name_1 %}</h4>
+                      </div>
+                      <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                          {% block price_1 %}
+                          {% endblock price_1 %}<small class="text-body-secondary fw-light">/{% block currency_1 %}
+                            {% endblock currency_1 %}</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                          <li>
+                            {% block author_1 %}
+                            {% endblock author_1 %}</li>
+                          <li>{% block genre_1 %}
+                            {% endblock genre_1 %}</li>
+                          <li>{% block rating_1 %}
+                            {% endblock rating_1 %}</li>
+                          <li>{% block age_limit_1 %}
+                            {% endblock age_limit_1 %}</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">{% block to_buy_1 %}
+                          {% endblock to_buy_1 %}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                      <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{% block name_2 %}
+                          {% endblock name_2 %}</h4>
+                      </div>
+                      <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{% block price_2 %}
+                          {% endblock price_2 %}<small class="text-body-secondary fw-light">/{% block currency_2 %}
+                          {% endblock currency_2 %}</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                          <li>{% block author_2 %}
+                            {% endblock author_2 %}</li>
+                          <li>{% block genre_2 %}
+                            {% endblock genre_2 %}</li>
+                          <li>{% block rating_2 %}
+                            {% endblock rating_2 %}</li>
+                          <li>{% block age_limit_2 %}
+                            {% endblock age_limit_2 %}</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">{% block to_buy_2 %}
+                          {% endblock to_buy_2 %}</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                      <div class="card-header py-3 text-bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">{% block name_3 %}
+                          {% endblock name_3 %}</h4>
+                      </div>
+                      <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{% block price_3 %}
+                          {% endblock price_3 %}<small class="text-body-secondary fw-light">/{% block currency_3 %}
+                          {% endblock currency_3 %}</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                          <li>{% block author_3 %}
+                            {% endblock author_3 %}</li>
+                          <li>{% block genre_3 %}
+                            {% endblock genre_3 %}</li>
+                          <li>{% block rating_3 %}
+                            {% endblock rating_3 %}</li>
+                          <li>{% block age_limit_3 %}
+                            {% endblock age_limit_3 %}</li>
+                        </ul>
+                        <button type="button" class="w-100 btn btn-lg btn-primary">{% block to_buy_3 %}
+                          {% endblock to_buy_3 %}</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+
+
+
+
+
+            {% endblock body %}
+        </div>
+      </main>
+      <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <div class="container">
+          <span class="text-body-secondary">Open your mind. Book Hub 2023. Online bookshop </span>
+          
+        </div>
+      </footer>
+</body>
+
+</html>
