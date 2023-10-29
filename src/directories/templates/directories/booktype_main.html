@@ -33,6 +33,7 @@
                 <li>{{ bookname.author }}</li>
                 <li>{{ bookname.genre }}</li>
                 <li>Rating {{ bookname.rating }}</li>
+                <li><img src="{{bookname.cover.url}}" class="card-img-top" alt="..."></li>
               </ul>
               <a href="/directories/bookname/{{ bookname.pk }}" class="w-100 btn btn-lg btn-outline-primary">Buy</a>
             </div>
