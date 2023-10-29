@@ -5,10 +5,18 @@ from . import models, forms
 from directories import models as directories_models
 from django.contrib.auth import get_user_model
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class OrderCreate(generic.CreateView):
+class OrderCreate(LoginRequiredMixin, generic.CreateView):
     template_name="applications/order_create.html"
     model = models.Order
+    login_url = "/admin/login/"
+    permission_required = [
+
+        "order.change_group",
+
+    ]
     form_class = forms.OrderModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -16,9 +24,10 @@ class OrderCreate(generic.CreateView):
         context["verb"] = "create"
         return context
 
-class OrderUpdate(generic.UpdateView):
+class OrderUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="applications/order_update.html"
     model = models.Order
+    login_url = "/admin/login/"
     form_class = forms.OrderModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -31,18 +40,21 @@ class OrderUpdate(generic.UpdateView):
     #     return f"/applications/order/{self.object.pk}/" 
 
 
-class OrderDetail(generic.DetailView):
+class OrderDetail(LoginRequiredMixin, generic.DetailView):
     template_name="applications/order_detail.html"
     model = models.Order
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class OrderDelete(generic.DeleteView):
+class OrderDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="applications/order_delete.html"
     model = models.Order
+    login_url = "/admin/login/"
+
     success_url = "/applications/order/" 
 
     def get_context_data(self, *args, **kwargs):
@@ -50,9 +62,11 @@ class OrderDelete(generic.DeleteView):
         context["verb"] = "delete"
         return context
 
-class OrderList(generic.ListView):
+class OrderList(LoginRequiredMixin, generic.ListView):
     template_name="applications/order_list.html"
     model = models.Order
+    login_url = "/admin/login/"
+
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -60,8 +74,10 @@ class OrderList(generic.ListView):
         return context
  
     
-class AboutUs(generic.TemplateView):
+class AboutUs(LoginRequiredMixin, generic.TemplateView):
     template_name = "about_us.html"
+    login_url = "/admin/login/"
+
 
 
 # User = get_user_model()

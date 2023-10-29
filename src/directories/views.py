@@ -10,9 +10,10 @@ from django.views import generic
 User = get_user_model()
 
 
-class CurrencyCreate(generic.CreateView):
+class CurrencyCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/currency_create.html"
     model = models.Currency
+    login_url = "/admin/login/"
     form_class = forms.CurrencyModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -20,9 +21,11 @@ class CurrencyCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class CurrencyUpdate(generic.UpdateView):
+   
+class CurrencyUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/currency_update.html"
     model = models.Currency
+    login_url = "/admin/login/"
     form_class = forms.CurrencyModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -33,16 +36,17 @@ class CurrencyUpdate(generic.UpdateView):
 class CurrencyDetail(generic.DetailView):
     template_name="directories/currency_detail.html"
     model = models.Currency
-    login_url = "admin/login/"
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class CurrencyDelete(generic.DeleteView):
+class CurrencyDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/currency_delete.html"
     model = models.Currency
+    login_url = "/admin/login/"
     success_url = "/directories/currency/" 
 
 class CurrencyList(generic.ListView):
@@ -55,9 +59,10 @@ class CurrencyList(generic.ListView):
         return context
     
 # Author author
-class AuthorCreate(generic.CreateView):
+class AuthorCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/author_create.html"
     model = models.Author
+    login_url = "/admin/login/"
     form_class = forms.AuthorModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -65,9 +70,10 @@ class AuthorCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class AuthorUpdate(generic.UpdateView):
+class AuthorUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/author_update.html"
     model = models.Author
+    login_url = "/admin/login/"
     form_class = forms.AuthorModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -84,9 +90,10 @@ class AuthorDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class AuthorDelete(generic.DeleteView):
+class AuthorDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/author_delete.html"
     model = models.Author
+    login_url = "/admin/login/"
     success_url = "/directories/author/" 
 
 class AuthorList(generic.ListView):
@@ -99,9 +106,10 @@ class AuthorList(generic.ListView):
         return context
     
 # Series series
-class SeriesCreate(generic.CreateView):
+class SeriesCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/series_create.html"
     model = models.Series
+    login_url = "/admin/login/"
     form_class = forms.SeriesModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -109,9 +117,10 @@ class SeriesCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class SeriesUpdate(generic.UpdateView):
+class SeriesUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/series_update.html"
     model = models.Series
+    login_url = "/admin/login/"
     form_class = forms.SeriesModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -122,15 +131,17 @@ class SeriesUpdate(generic.UpdateView):
 class SeriesDetail(generic.DetailView):
     template_name="directories/series_detail.html"
     model = models.Series
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class SeriesDelete(generic.DeleteView):
+class SeriesDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/series_delete.html"
     model = models.Series
+    login_url = "/admin/login/"
     success_url = "/directories/series/" 
 
 class SeriesList(generic.ListView):
@@ -144,9 +155,10 @@ class SeriesList(generic.ListView):
     
 
 # BookName bookname
-class BookNameCreate(generic.CreateView):
+class BookNameCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/bookname_create.html"
     model = models.BookName
+    login_url = "/admin/login/"
     form_class = forms.BookNameModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -154,9 +166,10 @@ class BookNameCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class BookNameUpdate(generic.UpdateView):
+class BookNameUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/bookname_update.html"
     model = models.BookName
+    login_url = "/admin/login/"
     form_class = forms.BookNameModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -173,13 +186,15 @@ class BookNameDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class BookNameDelete(generic.DeleteView):
+class BookNameDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/bookname_delete.html"
     model = models.BookName
+    login_url = "/admin/login/"
     success_url = "/directories/bookname/" 
 
 class BookNameList(generic.ListView):
     template_name="directories/bookname_list.html"
+    login_url = "/admin/login/"
     model = models.BookName
 
     def get_context_data(self, *args, **kwargs):
@@ -188,7 +203,7 @@ class BookNameList(generic.ListView):
         return context
     
 # Rating rating
-class RatingCreate(generic.CreateView):
+class RatingCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/rating_create.html"
     model = models.Rating
     form_class = forms.RatingModelForm
@@ -198,9 +213,10 @@ class RatingCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class RatingUpdate(generic.UpdateView):
+class RatingUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/rating_update.html"
     model = models.Rating
+    login_url = "/admin/login/"
     form_class = forms.RatingModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -217,9 +233,10 @@ class RatingDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class RatingDelete(generic.DeleteView):
+class RatingDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/rating_delete.html"
     model = models.Rating
+    login_url = "/admin/login/"
     success_url = "/directories/rating/" 
 
 class RatingList(generic.ListView):
@@ -232,9 +249,10 @@ class RatingList(generic.ListView):
         return context
     
 # AgeLimit agelimit
-class AgeLimitCreate(generic.CreateView):
+class AgeLimitCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/agelimit_create.html"
     model = models.AgeLimit
+    login_url = "/admin/login/"
     form_class = forms.AgeLimitModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -242,9 +260,10 @@ class AgeLimitCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class AgeLimitUpdate(generic.UpdateView):
+class AgeLimitUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/agelimit_update.html"
     model = models.AgeLimit
+    login_url = "/admin/login/"
     form_class = forms.AgeLimitModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -261,9 +280,10 @@ class AgeLimitDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class AgeLimitDelete(generic.DeleteView):
+class AgeLimitDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/agelimit_delete.html"
     model = models.AgeLimit
+    login_url = "/admin/login/"
     success_url = "/directories/ageLimit/" 
 
 class AgeLimitList(generic.ListView):
@@ -276,9 +296,10 @@ class AgeLimitList(generic.ListView):
         return context
 
 #BookType booktype 
-class BookTypeCreate(generic.CreateView):
+class BookTypeCreate(LoginRequiredMixin,generic.CreateView):
     template_name="directories/booktype_create.html"
     model = models.BookType
+    login_url = "/admin/login/"
     form_class = forms.BookTypeModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -286,9 +307,10 @@ class BookTypeCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class BookTypeUpdate(generic.UpdateView):
+class BookTypeUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/booktype_update.html"
     model = models.BookType
+    login_url = "/admin/login/"
     form_class = forms.BookTypeModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -305,13 +327,15 @@ class BookTypeDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class BookTypeDelete(generic.DeleteView):
+class BookTypeDelete(LoginRequiredMixin,generic.DeleteView):
     template_name="directories/booktype_delete.html"
     model = models.BookType
+    login_url = "/admin/login/"
     success_url = "/directories/booktype/" 
 
 class BookTypeList(generic.ListView):
     template_name="directories/booktype_list.html"
+    login_url = "/admin/login/"
     model = models.BookType
 
     def get_context_data(self, *args, **kwargs):
@@ -322,9 +346,12 @@ class BookTypeList(generic.ListView):
 
 
 # Genre genre 
-class GenreCreate(generic.CreateView):
+# @login_required 
+class GenreCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/genre_create.html"
     model = models.Genre
+
+    login_url = "/admin/login/"
     form_class = forms.GenreModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -332,9 +359,10 @@ class GenreCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class GenreUpdate(generic.UpdateView):
+class GenreUpdate(LoginRequiredMixin,generic.UpdateView):
     template_name="directories/genre_update.html"
     model = models.Genre
+    login_url = "/admin/login/"
     form_class = forms.GenreModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -351,9 +379,10 @@ class GenreDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class GenreDelete(generic.DeleteView):
+class GenreDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/genre_delete.html"
     model = models.Genre
+    login_url = "/admin/login/"
     success_url = "/directories/genre/" 
 
 class GenreList(generic.ListView):
@@ -366,9 +395,10 @@ class GenreList(generic.ListView):
         return context
  
 # CopyrightHolder
-class CopyrightHolderCreate(generic.CreateView):
+class CopyrightHolderCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/copyrightholder_create.html"
     model = models.CopyrightHolder
+    login_url = "/admin/login/"
     form_class = forms.CopyrightHolderModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -376,9 +406,10 @@ class CopyrightHolderCreate(generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class CopyrightHolderUpdate(generic.UpdateView):
+class CopyrightHolderUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/copyrightholder_update.html"
     model = models.CopyrightHolder
+    login_url = "/admin/login/"
     form_class = forms.CopyrightHolderModelForm
 
     def get_context_data(self, *args, **kwargs):
@@ -386,8 +417,9 @@ class CopyrightHolderUpdate(generic.UpdateView):
         context["verb"] = "detail"
         return context
     
-class CopyrightHolderDetail(generic.DetailView):
+class CopyrightHolderDetail(LoginRequiredMixin, generic.DetailView):
     template_name="directories/copyrightholder_detail.html"
+    login_url = "/admin/login/"
     model = models.CopyrightHolder
 
     def get_context_data(self, *args, **kwargs):
@@ -395,9 +427,10 @@ class CopyrightHolderDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class CopyrightHolderDelete(generic.DeleteView):
+class CopyrightHolderDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/copyrightholder_delete.html"
     model = models.CopyrightHolder
+    login_url = "/admin/login/"
     success_url = "/directories/copyrightholder/" 
 
 class CopyrightHolderList(generic.ListView):

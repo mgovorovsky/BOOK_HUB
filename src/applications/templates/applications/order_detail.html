@@ -12,10 +12,22 @@
         <b>Order summ: </b> {{object.summ}} </br>    
         <b>Order currency:</b> {{object.order_currency.name}} </br>
        
+        <!-- добавлены тэги -->
         {% a_plus_b 5 5 %}
         {% currency_value %}
 
-        
+        <!-- добавены запреты на просмотр части страницы пользователем -->
+
+        <!-- отдельные пермишн можно создавать в shell, например, чтобы видеть детейл вью, но не видеть 
+        лист вью, создается отдельное правилло (виодео 21  - 01:20:00) -->
+
+        <!-- проверить права можно выводом инфо {{perms.referencec}} -->
+         
+
+
+        {% if perms.auth.add_group %}
+        <H1>mega important content</H1>
+        {% endif %}
         {{ object.user|multiplier:3 }}
 
       </div>  

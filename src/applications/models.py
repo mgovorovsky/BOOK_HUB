@@ -34,6 +34,13 @@ class Order(models.Model):
 
     )
 
+# доп. разерешине
+    class Meta:
+        permissions =[
+            ("Вася-Петря", "Vasia and Pethja")
+
+        ]
+
     def __str__(self) -> str:
         return f"Order for User { self.user.username } {self.summ} {self.order_currency.name}"
 
