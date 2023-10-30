@@ -73,7 +73,8 @@ class Order(models.Model):
     cart = models.ForeignKey(
         Cart,
         verbose_name="Cart",
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        related_name="user_carts"
     )
 
     delivery_adress=models.TextField(
@@ -82,7 +83,7 @@ class Order(models.Model):
     )
 
     email=models.EmailField(
-        verbose_name="Email",
+        verbose_name="Email adress",
 
     )
 
@@ -90,6 +91,9 @@ class Order(models.Model):
         verbose_name="Telephone number", 
         
     ) 
+
+    def get_absolute_url(self):
+        return f"/orders/order_success/"
 
 
 

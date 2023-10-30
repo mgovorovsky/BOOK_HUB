@@ -6,7 +6,7 @@ from directories import models as directories_models
 from django.contrib.auth import get_user_model
 from django.views import generic
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class OrderCreate(LoginRequiredMixin, generic.CreateView):
     template_name="applications/order_create.html"
@@ -62,10 +62,18 @@ class OrderDelete(LoginRequiredMixin, generic.DeleteView):
         context["verb"] = "delete"
         return context
 
-class OrderList(LoginRequiredMixin, generic.ListView):
+# проверим принадлежность к группе с пермишнс
+class OrderList(UserPassesTestMixin, generic.ListView):
     template_name="applications/order_list.html"
     model = models.Order
     login_url = "/admin/login/"
+    def test_func(self):
+        # check if IT group
+        self.request.user.groups.filter(name="IT")
+        # True пропускает к странице, False нет 
+        return self.request.user.groups.filter(name="IT")  # возвращает принадлежность к группе. если нет принадлежности - доступ будет запрещен
+
+
 
 
     def get_context_data(self, *args, **kwargs):
@@ -77,6 +85,9 @@ class OrderList(LoginRequiredMixin, generic.ListView):
 class AboutUs(LoginRequiredMixin, generic.TemplateView):
     template_name = "about_us.html"
     login_url = "/admin/login/"
+
+
+
 
 
 

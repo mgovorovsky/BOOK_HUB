@@ -104,9 +104,22 @@ class OrderCreate(generic.CreateView):
     model = models.Order
     form_class = forms.OrderModelForm
 
-    cart = {"pk": 123}
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
+        cart_id = self.request.session.get("cart_id")
+        context["cart_id"] = cart_id
+        cart = models.Cart.objects.get(
+            pk=cart_id
+        )   
         context["cart"] = cart
         return context
+    
+# def ordered_cart(request):
+#     cart = update_cart(request)
+#     return render(
+#         request=request,
+#         template_name="orders/order_data.html",
+#         context={"cart": cart},
+
+#     )

@@ -2,12 +2,38 @@
 {% load crispy_forms_tags %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
-    <h3>Order details</h3>
+    <h3>Order #{{ cart_id }} details</h3>
+
+    <table class="table table-striped">
+        <tr>
+            <td>Book</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Total price</td>
+        </tr>
+        {% for good_in_cart in cart.goods.all %}
+        <tr>
+            <td>{{ good_in_cart.good.name }}</td > 
+            <td>{{ good_in_cart.quantity }}</td>
+            <td>{{ good_in_cart.price }}</td>
+            <td>{{ good_in_cart.total_price }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Total:</td>
+            <td>{{ cart.good_quantity }}</td>
+            <td></td>
+            <td>{{ cart.total_price }}</td>
+        </tr>
+    </table>
+    <br>
+
     <tr>
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
-            <a href="/orders/order_success/" class="btn btn-outline-success">To order</a>
+            <a href="/directories/bookname/" class="btn btn-outline-primary">Add a book</a>
+            <button type="submit" class="btn btn-outline-success">To order</button>
         </form> 
     </tr>
     <br>

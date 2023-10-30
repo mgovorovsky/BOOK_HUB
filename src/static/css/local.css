@@ -186,3 +186,7 @@ body {
   align-content: center;
   justify-content: center;  
 }
+
+.card-body {
+  height: 630px;
+}
