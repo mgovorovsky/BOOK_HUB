@@ -115,11 +115,3 @@ class OrderCreate(generic.CreateView):
         context["cart"] = cart
         return context
     
-# def ordered_cart(request):
-#     cart = update_cart(request)
-#     return render(
-#         request=request,
-#         template_name="orders/order_data.html",
-#         context={"cart": cart},
-
-#     )

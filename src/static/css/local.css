@@ -187,6 +187,6 @@ body {
   justify-content: center;  
 }
 
-.card-body {
-  height: 630px;
+.col {
+  min-width: 380px;
 }

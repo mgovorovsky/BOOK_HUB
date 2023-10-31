@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, reverse_lazy
 from directories import views as directories_views
 from applications import views as applications_views
 from orders import views as orders_views
@@ -31,11 +31,11 @@ urlpatterns = [
     path('directories/', include("directories.urls")),
     path('main/', directories_views.book_types),
  
-    path('applications/order/<int:pk>/', applications_views.OrderDetail.as_view()),
-    path('applications/order/update/<int:pk>/', applications_views.OrderUpdate.as_view()),
-    path('applications/order/', applications_views.OrderList.as_view()),
-    path('applications/order/create/', applications_views.OrderCreate.as_view()),
-    path('applications/order/delete/<int:pk>/', applications_views.OrderDelete.as_view()),
+    path('applications/order/<int:pk>/', applications_views.OrderDetail.as_view(), name = "order_detail"),
+    path('applications/order/update/<int:pk>/', applications_views.OrderUpdate.as_view(), name = "order_update"),
+    path('applications/order/', applications_views.OrderList.as_view(), name = "order_list"),
+    path('applications/order/create/', applications_views.OrderCreate.as_view(), name = "order_create"),
+    path('applications/order/delete/<int:pk>/', applications_views.OrderDelete.as_view(), name = "order_delete"),
     
 
     path('orders/cart/', orders_views.cart),

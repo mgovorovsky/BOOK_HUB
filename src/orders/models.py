@@ -70,12 +70,15 @@ class GoodInCart(models.Model):
     
 
 class Order(models.Model):
-    cart = models.ForeignKey(
+    cart = models.OneToOneField(
         Cart,
         verbose_name="Cart",
         on_delete=models.PROTECT,
-        related_name="user_carts"
+        related_name="user_carts",
+        blank=True,
+        null=True,
     )
+
 
     delivery_adress=models.TextField(
         verbose_name="Delivery adress",

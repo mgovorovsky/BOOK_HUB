@@ -39,5 +39,13 @@
     <br>
 
 
+    {% for good_in_cart in cart.user_carts.all %}
+        <tr>
+            <td>{{ good_in_cart.user_carts.pk }}</td > 
+            <td>{{ good_in_cart.user_carts.name }}</td>
+        </tr>
+        {% endfor %}
+
+
 {% endblock body %}
 

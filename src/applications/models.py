@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import path, include, reverse_lazy
 
 User = get_user_model()
 
@@ -46,7 +47,9 @@ class Order(models.Model):
 
     # используется для всех view одинаковый
     def get_absolute_url(self):
-        return f"/applications/order/{self.pk}/"
+        return reverse_lazy("applications:order_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+
+        # return f"/applications/order/{self.pk}/"
 
 
 
