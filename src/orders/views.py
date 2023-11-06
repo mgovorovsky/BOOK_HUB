@@ -97,7 +97,7 @@ def order_success(request):
         del request.session["cart_id"]
         return render(
             request=request,
-            template_name="orders/order_data.html",
+            template_name="orders/order_success.html",
         
         )
     

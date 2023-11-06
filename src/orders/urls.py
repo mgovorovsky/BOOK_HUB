@@ -29,7 +29,7 @@ urlpatterns = [
     path('cart-delete-good/<int:pk>', views.DeleteGoodInCart.as_view(), name = "good_in_cart_delete"),
     path('order_success/', views.order_success, name = "order_success"),
     path('order_data/', views.OrderCreate.as_view(), name = "order_data"),
-    path('order_empty/', views.order_success, name = "order_empty"),
+    # path('order_empty/', views.order_success, name = "order_empty"),
 
 ] 
 
