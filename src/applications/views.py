@@ -7,8 +7,9 @@ from django.contrib.auth import get_user_model
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import path, include, reverse_lazy
 
-class OrderCreate(LoginRequiredMixin, generic.CreateView):
+class OrderCreate(UserPassesTestMixin, generic.CreateView):
     template_name="applications/order_create.html"
     model = models.Order
     login_url = "/admin/login/"
@@ -18,6 +19,13 @@ class OrderCreate(LoginRequiredMixin, generic.CreateView):
 
     ]
     form_class = forms.OrderModelForm
+
+    def test_func(self):
+        # check if IT group
+        self.request.user.groups.filter(name="IT")
+        # True пропускает к странице, False нет 
+        return self.request.user.groups.filter(name="IT")  # возвращает принадлежность к группе. если нет принадлежности - доступ будет запрещен
+
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -29,6 +37,14 @@ class OrderUpdate(LoginRequiredMixin, generic.UpdateView):
     model = models.Order
     login_url = "/admin/login/"
     form_class = forms.OrderModelForm
+    def test_func(self):
+        # check if IT group
+        self.request.user.groups.filter(name="managers")
+        # True пропускает к странице, False нет 
+        return self.request.user.groups.filter(name="managers")  # возвращает принадлежность к группе. если нет принадлежности - доступ будет запрещен
+
+
+    
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -44,6 +60,13 @@ class OrderDetail(LoginRequiredMixin, generic.DetailView):
     template_name="applications/order_detail.html"
     model = models.Order
     login_url = "/admin/login/"
+    def test_func(self):
+        # check if IT group
+        self.request.user.groups.filter(name="managers")
+        # True пропускает к странице, False нет 
+        return self.request.user.groups.filter(name="managers")  # возвращает принадлежность к группе. если нет принадлежности - доступ будет запрещен
+
+
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -54,6 +77,12 @@ class OrderDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="applications/order_delete.html"
     model = models.Order
     login_url = "/admin/login/"
+    def test_func(self):
+        # check if IT group
+        self.request.user.groups.filter(name="managers")
+        # True пропускает к странице, False нет 
+        return self.request.user.groups.filter(name="managers")  # возвращает принадлежность к группе. если нет принадлежности - доступ будет запрещен
+
 
     success_url = "/applications/order/" 
 

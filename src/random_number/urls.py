@@ -16,20 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, reverse_lazy
-from directories import views as directories_views
+from random_number import views as views
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+app_name = "random_number"
 
 urlpatterns = [ 
-    path('admin/', admin.site.urls),
-    path('applications/', include("applications.urls")),
-    path('directories/', include("directories.urls")),
-    path('main/', directories_views.book_types),
-    path('orders/', include("orders.urls")),
-    path('random_number/', include("random_number.urls")),
 
+    path('', views.get_random), 
 
 ] 
 

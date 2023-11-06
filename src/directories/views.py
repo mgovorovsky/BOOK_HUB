@@ -10,7 +10,7 @@ from django.views import generic
 User = get_user_model()
 
 
-class CurrencyCreate(LoginRequiredMixin,generic.CreateView):
+class CurrencyCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/currency_create.html"
     model = models.Currency
     login_url = "/admin/login/"
@@ -22,7 +22,7 @@ class CurrencyCreate(LoginRequiredMixin,generic.CreateView):
         return context
     
    
-class CurrencyUpdate(LoginRequiredMixin,generic.UpdateView):
+class CurrencyUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/currency_update.html"
     model = models.Currency
     login_url = "/admin/login/"
@@ -33,7 +33,7 @@ class CurrencyUpdate(LoginRequiredMixin,generic.UpdateView):
         context["verb"] = "detail"
         return context
     
-class CurrencyDetail(generic.DetailView):
+class CurrencyDetail(LoginRequiredMixin, generic.DetailView):
     template_name="directories/currency_detail.html"
     model = models.Currency
     login_url = "/admin/login/"
@@ -43,13 +43,13 @@ class CurrencyDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class CurrencyDelete(LoginRequiredMixin,generic.DeleteView):
+class CurrencyDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/currency_delete.html"
     model = models.Currency
     login_url = "/admin/login/"
     success_url = "/directories/currency/" 
 
-class CurrencyList(generic.ListView):
+class CurrencyList(LoginRequiredMixin, generic.ListView):
     template_name="directories/currency_list.html"
     model = models.Currency
 
@@ -59,7 +59,7 @@ class CurrencyList(generic.ListView):
         return context
     
 # Author author
-class AuthorCreate(LoginRequiredMixin,generic.CreateView):
+class AuthorCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/author_create.html"
     model = models.Author
     login_url = "/admin/login/"
@@ -70,7 +70,7 @@ class AuthorCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class AuthorUpdate(LoginRequiredMixin,generic.UpdateView):
+class AuthorUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/author_update.html"
     model = models.Author
     login_url = "/admin/login/"
@@ -84,6 +84,7 @@ class AuthorUpdate(LoginRequiredMixin,generic.UpdateView):
 class AuthorDetail(generic.DetailView):
     template_name="directories/author_detail.html"
     model = models.Author
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -99,6 +100,7 @@ class AuthorDelete(LoginRequiredMixin,generic.DeleteView):
 class AuthorList(generic.ListView):
     template_name="directories/author_list.html"
     model = models.Author
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -106,7 +108,7 @@ class AuthorList(generic.ListView):
         return context
     
 # Series series
-class SeriesCreate(LoginRequiredMixin,generic.CreateView):
+class SeriesCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/series_create.html"
     model = models.Series
     login_url = "/admin/login/"
@@ -117,7 +119,7 @@ class SeriesCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class SeriesUpdate(LoginRequiredMixin,generic.UpdateView):
+class SeriesUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/series_update.html"
     model = models.Series
     login_url = "/admin/login/"
@@ -138,7 +140,7 @@ class SeriesDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class SeriesDelete(LoginRequiredMixin,generic.DeleteView):
+class SeriesDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/series_delete.html"
     model = models.Series
     login_url = "/admin/login/"
@@ -155,7 +157,7 @@ class SeriesList(generic.ListView):
     
 
 # BookName bookname
-class BookNameCreate(LoginRequiredMixin,generic.CreateView):
+class BookNameCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/bookname_create.html"
     model = models.BookName
     login_url = "/admin/login/"
@@ -166,7 +168,7 @@ class BookNameCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class BookNameUpdate(LoginRequiredMixin,generic.UpdateView):
+class BookNameUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/bookname_update.html"
     model = models.BookName
     login_url = "/admin/login/"
@@ -186,7 +188,7 @@ class BookNameDetail(generic.DetailView):
         context["verb"] = "detail"
         return context
     
-class BookNameDelete(LoginRequiredMixin,generic.DeleteView):
+class BookNameDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/bookname_delete.html"
     model = models.BookName
     login_url = "/admin/login/"
@@ -203,7 +205,7 @@ class BookNameList(generic.ListView):
         return context
     
 # Rating rating
-class RatingCreate(LoginRequiredMixin,generic.CreateView):
+class RatingCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/rating_create.html"
     model = models.Rating
     form_class = forms.RatingModelForm
@@ -213,7 +215,7 @@ class RatingCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class RatingUpdate(LoginRequiredMixin,generic.UpdateView):
+class RatingUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/rating_update.html"
     model = models.Rating
     login_url = "/admin/login/"
@@ -224,22 +226,23 @@ class RatingUpdate(LoginRequiredMixin,generic.UpdateView):
         context["verb"] = "detail"
         return context
     
-class RatingDetail(generic.DetailView):
+class RatingDetail(LoginRequiredMixin, generic.DetailView):
     template_name="directories/rating_detail.html"
     model = models.Rating
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class RatingDelete(LoginRequiredMixin,generic.DeleteView):
+class RatingDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/rating_delete.html"
     model = models.Rating
     login_url = "/admin/login/"
     success_url = "/directories/rating/" 
 
-class RatingList(generic.ListView):
+class RatingList(LoginRequiredMixin, generic.ListView):
     template_name="directories/rating_list.html"
     model = models.Rating
 
@@ -249,7 +252,7 @@ class RatingList(generic.ListView):
         return context
     
 # AgeLimit agelimit
-class AgeLimitCreate(LoginRequiredMixin,generic.CreateView):
+class AgeLimitCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/agelimit_create.html"
     model = models.AgeLimit
     login_url = "/admin/login/"
@@ -260,7 +263,7 @@ class AgeLimitCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class AgeLimitUpdate(LoginRequiredMixin,generic.UpdateView):
+class AgeLimitUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/agelimit_update.html"
     model = models.AgeLimit
     login_url = "/admin/login/"
@@ -271,24 +274,26 @@ class AgeLimitUpdate(LoginRequiredMixin,generic.UpdateView):
         context["verb"] = "detail"
         return context
     
-class AgeLimitDetail(generic.DetailView):
+class AgeLimitDetail(LoginRequiredMixin, generic.DetailView):
     template_name="directories/agelimit_detail.html"
     model = models.AgeLimit
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class AgeLimitDelete(LoginRequiredMixin,generic.DeleteView):
+class AgeLimitDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/agelimit_delete.html"
     model = models.AgeLimit
     login_url = "/admin/login/"
     success_url = "/directories/ageLimit/" 
 
-class AgeLimitList(generic.ListView):
+class AgeLimitList(LoginRequiredMixin, generic.ListView):
     template_name="directories/agelimit_list.html"
     model = models.AgeLimit
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -296,7 +301,7 @@ class AgeLimitList(generic.ListView):
         return context
 
 #BookType booktype 
-class BookTypeCreate(LoginRequiredMixin,generic.CreateView):
+class BookTypeCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/booktype_create.html"
     model = models.BookType
     login_url = "/admin/login/"
@@ -307,7 +312,7 @@ class BookTypeCreate(LoginRequiredMixin,generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class BookTypeUpdate(LoginRequiredMixin,generic.UpdateView):
+class BookTypeUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/booktype_update.html"
     model = models.BookType
     login_url = "/admin/login/"
@@ -318,16 +323,17 @@ class BookTypeUpdate(LoginRequiredMixin,generic.UpdateView):
         context["verb"] = "detail"
         return context
     
-class BookTypeDetail(generic.DetailView):
+class BookTypeDetail(LoginRequiredMixin, generic.DetailView):
     template_name="directories/booktype_detail.html"
     model = models.BookType
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["verb"] = "detail"
         return context
     
-class BookTypeDelete(LoginRequiredMixin,generic.DeleteView):
+class BookTypeDelete(LoginRequiredMixin, generic.DeleteView):
     template_name="directories/booktype_delete.html"
     model = models.BookType
     login_url = "/admin/login/"
@@ -350,7 +356,6 @@ class BookTypeList(generic.ListView):
 class GenreCreate(LoginRequiredMixin, generic.CreateView):
     template_name="directories/genre_create.html"
     model = models.Genre
-
     login_url = "/admin/login/"
     form_class = forms.GenreModelForm
 
@@ -359,7 +364,7 @@ class GenreCreate(LoginRequiredMixin, generic.CreateView):
         context["verb"] = "detail"
         return context
     
-class GenreUpdate(LoginRequiredMixin,generic.UpdateView):
+class GenreUpdate(LoginRequiredMixin, generic.UpdateView):
     template_name="directories/genre_update.html"
     model = models.Genre
     login_url = "/admin/login/"
@@ -372,6 +377,7 @@ class GenreUpdate(LoginRequiredMixin,generic.UpdateView):
     
 class GenreDetail(generic.DetailView):
     template_name="directories/genre_detail.html"
+    login_url = "/admin/login/"
     model = models.Genre
 
     def get_context_data(self, *args, **kwargs):
@@ -388,6 +394,7 @@ class GenreDelete(LoginRequiredMixin, generic.DeleteView):
 class GenreList(generic.ListView):
     template_name="directories/genre_list.html"
     model = models.Genre
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -436,6 +443,7 @@ class CopyrightHolderDelete(LoginRequiredMixin, generic.DeleteView):
 class CopyrightHolderList(generic.ListView):
     template_name="directories/copyrightholder_list.html"
     model = models.CopyrightHolder
+    login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)

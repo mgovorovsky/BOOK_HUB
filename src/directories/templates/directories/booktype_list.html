@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Book type {{ verb }} {% endblock title %}
+{% block title %} Book's type {{ verb }} {% endblock title %}
 {% block body %}
     <table class="table table-striped">
         <tr>
@@ -16,8 +16,10 @@
             <td>{{ object.name }}</td>
             <td>{{ object.description }}</td>
             <td>
+                {% if perms.auth.add_group %}
                 <a href="/directories/booktype/update/{{ object.pk }}" class="btn btn-outline-primary">Update</a>
                 <a href="/directories/booktype/delete/{{ object.pk }}" class="btn btn-outline-danger">Delete</a>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

@@ -16,20 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, reverse_lazy
-from directories import views as directories_views
+from applications import views as views
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+app_name = "applications"
 
 urlpatterns = [ 
-    path('admin/', admin.site.urls),
-    path('applications/', include("applications.urls")),
-    path('directories/', include("directories.urls")),
-    path('main/', directories_views.book_types),
-    path('orders/', include("orders.urls")),
-    path('random_number/', include("random_number.urls")),
 
+    path('order/<int:pk>/', views.OrderDetail.as_view(), name = "order_detail"),
+    path('order/update/<int:pk>/', views.OrderUpdate.as_view(), name = "order_update"),
+    path('order/', views.OrderList.as_view(), name = "order_list"),
+    path('order/create/', views.OrderCreate.as_view(), name = "order_create"),
+    path('order/delete/<int:pk>/', views.OrderDelete.as_view(), name = "order_delete"),
+    path('about-us/', views.AboutUs.as_view()),
 
 ] 
 

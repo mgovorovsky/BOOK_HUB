@@ -8,18 +8,24 @@
             <td>Name</td>
             <td>Description</td>
             <td>Cpyright holder</td>
-            <td>Actions</td>
+            {% if perms.auth.add_group %}<td>Actions</td>{% endif %}
         </tr>
-        <a href="/directories/author/create/" class="btn btn-outline-success">Create</a>
+        {% if perms.auth.add_group %} 
+        <!-- добавляем постоянные ссылки -->
+        <a href="{% url 'directories:author_create' %}" class="btn btn-outline-success">Create</a>{% endif %}
         {% for obj in object_list %}
         <tr>
-            <td><a href="/directories/author/{{ obj.pk }}" class="btn btn-outline-primary">{{ obj.pk }}</a> </td>
+            <!-- добавляем постоянные ссылки -->
+            <td><a href="{% url 'directories:author_detail' obj.pk %}" class="btn btn-outline-primary">{{ obj.pk }}</a> </td>
             <td>{{ obj.name }}</td>
             <td>{{ obj.description }}</td>
             <td>{{ obj.copyright_holder }}</td>
             <td>
-                <a href="/directories/author/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
-                <a href="/directories/author/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
+                {% if perms.auth.add_group %}
+                <!-- добавляем постоянные ссылки -->
+                <a href="{% url 'directories:author_update' obj.pk %}" class="btn btn-outline-primary">Update</a>
+                <a href="{% url 'directories:author_delete' obj.pk %}" class="btn btn-outline-danger">Delete</a>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

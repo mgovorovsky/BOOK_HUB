@@ -5,8 +5,8 @@
     {{ object }}
     <h1>Author to delete:</h1>
     <b>ID: </b> {{object.pk}} </br>
-    <b>Author name: </b> {{object.name}} </br>    
-    <b>Author description:</b> {{object.description}} </br>
+    <b>Author's name: </b> {{object.name}} </br>    
+    <b>Author's description:</b> {{object.description}} </br>
     <form action="" method="post">
         {% csrf_token %}
         <button type="submit">Are you sure?</button>

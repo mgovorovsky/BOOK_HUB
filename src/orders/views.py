@@ -3,6 +3,8 @@ from django.views.generic import UpdateView, DeleteView
 from . import models, forms
 from directories import models as good_model 
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def update_cart(request):
     cart = None
@@ -95,7 +97,7 @@ def order_success(request):
         del request.session["cart_id"]
         return render(
             request=request,
-            template_name="orders/order_success.html",
+            template_name="orders/order_data.html",
         
         )
     
@@ -115,3 +117,31 @@ class OrderCreate(generic.CreateView):
         context["cart"] = cart
         return context
     
+    def get_initial(self, *args, **kwargs):
+        initial = super().get_initial(*args, **kwargs)
+        cart_id = self.request.session.get("cart_id")
+        cart = models.Cart.objects.get(
+            pk=cart_id
+        )   
+        initial['cart'] = cart
+        return initial
+    
+
+# from .forms import EmailPostForm, CommentForm, SearchForm
+# from haystack.query import SearchQuerySet
+
+# def post_search(request):
+#     form = SearchForm()
+    # if 'query' in request.GET:
+    #     form = SearchForm(request.GET)
+    #     if form.is_valid():
+    #         cd = form.cleaned_data
+    #         results = SearchQuerySet().models(Post).filter(content=cd['query']).load_all()
+    #         # count total results
+    #         total_results = results.count()
+    # return render(request,
+    #               'blog/post/search.html',
+    #               {'form': form,
+    #                'cd': cd,
+    #                'results': results,
+    #                'total_results': total_results})

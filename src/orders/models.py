@@ -75,8 +75,8 @@ class Order(models.Model):
         verbose_name="Cart",
         on_delete=models.PROTECT,
         related_name="user_carts",
-        blank=True,
-        null=True,
+        blank=False,
+        null=True, 
     )
 
 

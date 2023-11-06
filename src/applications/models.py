@@ -47,9 +47,9 @@ class Order(models.Model):
 
     # используется для всех view одинаковый
     def get_absolute_url(self):
-        return reverse_lazy("applications:order_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return reverse_lazy("applications:order_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
 
-        # return f"/applications/order/{self.pk}/"
+        return f"/applications/order/{self.pk}/"
 
 
 

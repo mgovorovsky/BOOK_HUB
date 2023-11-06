@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Book Name {{ verb }} {% endblock title %}
+{% block title %} Book's Name {{ verb }} {% endblock title %}
 {% block body %}
     {{ object }}
-    <h1>Book Name to delete:</h1>
+    <h1>Book's Name to delete:</h1>
     <b>ID: </b> {{object.pk}} </br>
-    <b>Book Name: </b> {{object.name}} </br>    
+    <b>Book's Name: </b> {{object.name}} </br>    
     <b>Book Name description:</b> {{object.description}} </br>
     <form action="" method="post">
         {% csrf_token %}

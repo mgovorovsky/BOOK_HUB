@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import path, include, reverse_lazy
 
 # Create your models here.
 
@@ -21,7 +22,8 @@ class CopyrightHolder(models.Model):
 
 
     def get_absolute_url(self):
-        return f"/directories/copyrightholder/{self.pk}/"  
+        return reverse_lazy("directories:copyrightholder_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return f"/directories/copyrightholder/{self.pk}/"  
 
 class Author(models.Model):
     name = models.CharField(
@@ -50,7 +52,8 @@ class Author(models.Model):
     #     return f"Author {self.name} ({self.pk})"
     
     def get_absolute_url(self):
-        return f"/directories/author/{self.pk}/"
+        return reverse_lazy("directories:author_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return f"/directories/author/{self.pk}/"
 
 
 class Series(models.Model):
@@ -71,7 +74,8 @@ class Series(models.Model):
     #     return f"Series {self.name} ({self.pk})"  
 
     def get_absolute_url(self):
-        return f"/directories/series/{self.pk}/"      
+        return reverse_lazy("directories:series_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return f"/directories/series/{self.pk}/"      
     
 
 class BookName(models.Model):
@@ -165,7 +169,8 @@ class BookName(models.Model):
     #     return f"BookName {self.name} ({self.pk})"
     
     def get_absolute_url(self):
-        return f"/directories/bookname/{self.pk}/" 
+        return reverse_lazy("directories:bookname_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return f"/directories/bookname/{self.pk}/" 
 
 
 class Currency(models.Model):
@@ -187,7 +192,8 @@ class Currency(models.Model):
     #     return f"Currency {self.name} ({self.pk})"
     
     def get_absolute_url(self):
-        return f"/directories/currency/{self.pk}/"
+        return reverse_lazy("directories:currency_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        #return f"/directories/currency/{self.pk}/"
 
 class Rating(models.Model):
     name = models.CharField(
@@ -203,7 +209,8 @@ class Rating(models.Model):
     #     return f"Rating {self.name} ({self.pk})"
     
     def get_absolute_url(self):
-        return f"/directories/rating/{self.pk}/"
+        return reverse_lazy("directories:rating_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        # return f"/directories/rating/{self.pk}/"
 
 class AgeLimit(models.Model):
     name = models.CharField(
@@ -219,7 +226,8 @@ class AgeLimit(models.Model):
     #     return f"AgeLimit {self.name} ({self.pk})"
     
     def get_absolute_url(self):
-        return f"/directories/agelimit/{self.pk}/"
+        return reverse_lazy("directories:agelimit_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        # return f"/directories/agelimit/{self.pk}/"
 
 
 # class PaymentSystem(models.Model):
@@ -255,7 +263,8 @@ class BookType(models.Model):
         return f"{self.name}"
     
     def get_absolute_url(self):
-        return f"/directories/booktype/{self.pk}/"
+        return reverse_lazy("directories:booktype_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        # return f"/directories/booktype/{self.pk}/"
 
 
 class Genre(models.Model):
@@ -276,8 +285,10 @@ class Genre(models.Model):
     # def __str__(self):
     #     return f"Genre {self.name} ({self.pk})"
     
+    
     def get_absolute_url(self):
-        return f"/directories/genre/{self.pk}/"
+        return reverse_lazy("directories:genre_detail", kwargs={"pk": self.pk}) # замена ссылки на постоянную
+        # return f"/directories/genre/{self.pk}/"
 
 
      

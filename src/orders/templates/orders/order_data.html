@@ -31,8 +31,9 @@
     <tr>
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <input type="hidden" name="cart_id" value="{{cart_id}}" />
             {{ form | crispy }}
-            <a href="/directories/bookname/" class="btn btn-outline-primary">Add a book</a>
+            <a href="{% url 'directories:bookname_list' %}" class="btn btn-outline-primary">Add a book</a>
             <button type="submit" class="btn btn-outline-success">To order</button>
         </form> 
     </tr>

@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Book Name {{ verb }} {% endblock title %}
+{% block title %} Book's Name {{ verb }} {% endblock title %}
 {% block body %}
-    <h1>Book Name Detail</h1>
+    <h1>Book's Name Detail</h1>
     <div class="row">
         <div class="col-5">
             <b>ID: </b> {{object.pk}} </br>
-            <b>Book Name: </b> {{object.name}} </br> 
+            <b>Book's Name: </b> {{object.name}} </br> 
             <b>Author: </b>{{ object.author }}</br> 
             <b>Series: </b>{{ object.series }}</br> 
             <b>Genre: </b>{{ object.genre }}</br> 
-            <b>Book type: </b>{{ object.booktype }}</br>
+            <b>Book's type: </b>{{ object.booktype }}</br>
             <b>Rating: </b>{{ object.rating }}</br>
             <b>Age limit: </b>{{ object.agelimit }}</br>
             <b>Price: </b>{{ object.price }}</br> 
-            <b>Book description:</b> {{object.description}} </br>
+            <b>Book's description:</b> {{object.description}} </br>
             <br>
             <form action="/orders/cart" method="get">
                 <input type="number" name="quantity" step="1" min="1" value="1">

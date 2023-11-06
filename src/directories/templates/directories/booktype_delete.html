@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block title %} Book type {{ verb }} {% endblock title %}
+{% block title %} Book's type {{ verb }} {% endblock title %}
 {% block body %}
     {{ object }}
-    <h1>Book type to delete:</h1>
+    <h1>Book's type to delete:</h1>
     <b>ID: </b> {{object.pk}} </br>
     <b>Book type name: </b> {{object.name}} </br>    
     <b>Book type description:</b> {{object.description}} </br>
