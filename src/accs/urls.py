@@ -16,20 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, reverse_lazy
-from directories import views as directories_views
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
 
+app_name = "accs"
 
 
 urlpatterns = [ 
-    path('admin/', admin.site.urls),
-    path('applications/', include("applications.urls")),
-    path('directories/', include("directories.urls")),
-    path('', directories_views.book_types),
-    path('orders/', include("orders.urls")),
-    path('random_number/', include("random_number.urls")),
-    path('accs/', include("accs.urls")),
+    path("login/", views.MyLoginView.as_view(), name="login"),
+
 ] 
 
 if not settings.IS_PRODUCTION:

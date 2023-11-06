@@ -3,7 +3,7 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/main">Book Hub</a>
+        <a class="navbar-brand" href="/">Book Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,21 +19,22 @@
               <a {% if request.resolver_match.route == "directories/author/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/directories/author">Authors</a> 
             </li>
             <li class="nav-item">
-              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="#">Profile</a> 
+              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="#">Portal</a> 
             </li>
             <li class="nav-item">
               <a {% if request.resolver_match.route == "orders/cart/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/orders/cart">Cart</a> 
             </li>
-            <li class="nav-item">
-              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="#">Portal</a> 
-            </li>
-            <li class="nav-item">
-              <a {% if request.resolver_match.route == "admin/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/admin">Login</a> 
+            <!-- <li class="nav-item">
+              <a {% if request.resolver_match.route == "admin/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/accs/login">Login</a> 
+            </li> -->
+            <li {% if request.resolver_match.route == "" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %}>
+              {{ user|show_user_or_login }}
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" aria-disabled="true" 
               href="https://api.nbrb.by/exrates/rates/431">BYN/USD {% currency_value %}</a>
             </li>
+
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

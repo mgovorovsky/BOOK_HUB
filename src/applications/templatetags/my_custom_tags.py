@@ -3,6 +3,8 @@ import requests
 from django.http import HttpResponse
 from datetime import date
 from orders import views as order_view
+from django.urls import reverse_lazy
+from django.utils.safestring import mark_safe
 
 register = template.Library()
 
@@ -24,3 +26,12 @@ def currency_value():
     # date_today = date.today()
     return (f"{usd_value} ") # ({date_today} UTC) 
 
+# filter 
+@register.filter( name="show_user_or_login")
+def show_user_or_login(user_obj):
+    result = ""
+    if user_obj.is_authenticated:
+        result =  user_obj.username
+    else:
+        result  = f'<a href="{reverse_lazy("accs:login")} ">Login</a>'
+    return mark_safe(result)
