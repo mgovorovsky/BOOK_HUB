@@ -31,7 +31,8 @@ def currency_value():
 def show_user_or_login(user_obj):
     result = ""
     if user_obj.is_authenticated:
-        result =  user_obj.username
+        result  = f'<a class="nav-link" href="{reverse_lazy("accs:logout")}">{user_obj.username} (logout)</a>'
+
     else:
-        result  = f'<a href="{reverse_lazy("accs:login")} ">Login</a>'
+        result  = f'<a class="nav-link" href="{reverse_lazy("accs:login")}">Login</a>'
     return mark_safe(result)

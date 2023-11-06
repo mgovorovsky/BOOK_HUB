@@ -147,4 +147,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 CART_SESSION_ID = 'cart'
 
-LOGIN_REDIRECT_URL = "/" #reverse_lazy("accs:login")
+LOGIN_REDIRECT_URL = reverse_lazy("home")
+
+LOGIN_URL = reverse_lazy("accs:login")

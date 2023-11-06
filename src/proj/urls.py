@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('applications/', include("applications.urls")),
     path('directories/', include("directories.urls")),
-    path('', directories_views.book_types),
+    path('', directories_views.book_types, name="home"),
     path('orders/', include("orders.urls")),
     path('random_number/', include("random_number.urls")),
     path('accs/', include("accs.urls")),

@@ -6,3 +6,6 @@ from django.contrib.auth import views as auth_views
 
 class MyLoginView(auth_views.LoginView):
     template_name = "accs/login.html"
+
+class MyLogoutView(auth_views.LogoutView):
+    template_name = "accs/logout.html"
