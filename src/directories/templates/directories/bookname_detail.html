@@ -12,14 +12,17 @@
             <b>Genre: </b>{{ object.genre }}</br> 
             <b>Book's type: </b>{{ object.booktype }}</br>
             <b>Rating: </b>{{ object.rating }}</br>
+            <b>ISBN: </b>{{ object.isbn }}</br>
+            <b>Availability: </b>{{ object.sale_availability }}</br>
             <b>Age limit: </b>{{ object.agelimit }}</br>
+            <b>Quantity: </b>{{ object.available_quantity }}</br>
             <b>Price: </b>{{ object.price }}</br> 
             <b>Book's description:</b> {{object.description}} </br>
             <br>
             <form action="/orders/cart" method="get">
                 <input type="number" name="quantity" step="1" min="1" value="1">
                 <input type="hidden" name="good" value="{{object.pk}}">
-                <button class="btn btn-outline-primary">Add to cart</button>
+                <button class="btn btn-outline-primary"><i class="bi bi-cart3"></i></button>
             </form>
         </div>  
         <div class="col-2">

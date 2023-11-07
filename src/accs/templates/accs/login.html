@@ -25,6 +25,6 @@
 </form>
 
 {# Assumes you set up the password_reset view in your URLconf #}
-<p><a href="">Lost password?</a></p>
+<p><a href="{% url 'accs:pass_reset' %}">Lost password?</a></p>
 
 {% endblock body %}

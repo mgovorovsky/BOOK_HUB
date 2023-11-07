@@ -52,6 +52,7 @@ class CurrencyDelete(LoginRequiredMixin, generic.DeleteView):
 class CurrencyList(LoginRequiredMixin, generic.ListView):
     template_name="directories/currency_list.html"
     model = models.Currency
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -101,6 +102,7 @@ class AuthorList(generic.ListView):
     template_name="directories/author_list.html"
     model = models.Author
     login_url = "/admin/login/"
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -149,6 +151,7 @@ class SeriesDelete(LoginRequiredMixin, generic.DeleteView):
 class SeriesList(generic.ListView):
     template_name="directories/series_list.html"
     model = models.Series
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -198,6 +201,7 @@ class BookNameList(generic.ListView):
     template_name="directories/bookname_list.html"
     login_url = "/admin/login/"
     model = models.BookName
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -245,6 +249,7 @@ class RatingDelete(LoginRequiredMixin, generic.DeleteView):
 class RatingList(LoginRequiredMixin, generic.ListView):
     template_name="directories/rating_list.html"
     model = models.Rating
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -294,6 +299,7 @@ class AgeLimitList(LoginRequiredMixin, generic.ListView):
     template_name="directories/agelimit_list.html"
     model = models.AgeLimit
     login_url = "/admin/login/"
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -343,6 +349,7 @@ class BookTypeList(generic.ListView):
     template_name="directories/booktype_list.html"
     login_url = "/admin/login/"
     model = models.BookType
+    paginate_by = 3
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -394,6 +401,7 @@ class GenreDelete(LoginRequiredMixin, generic.DeleteView):
 class GenreList(generic.ListView):
     template_name="directories/genre_list.html"
     model = models.Genre
+    paginate_by = 3
     login_url = "/admin/login/"
 
     def get_context_data(self, *args, **kwargs):

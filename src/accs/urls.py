@@ -25,6 +25,12 @@ app_name = "accs"
 urlpatterns = [ 
     path("login/", views.MyLoginView.as_view(), name="login"),
     path("logout/", views.MyLogoutView.as_view(), name="logout"),
+    path("pass_change/", views.MyPasswordChangeView.as_view(), name="pass_change"),
+    path("pass_change_done/", views.MyPasswordChangeDoneView.as_view(), name="pass_change_done"),
+    path("pass_reset/", views.MyPasswordResetView.as_view(), name="pass_reset"),
+    path("pass_reset_done/", views.MyPasswordResetDoneView.as_view(), name="pass_reset_done"),
+    path("pass_reset_confirm/", views.MyPasswordResetConfirmView.as_view(), name="pass_reset_confirm"),
+    path("pass_reset_complete/", views.MyPasswordResetCompleteView.as_view(), name="pass_reset_complete"),
 
 ] 
 

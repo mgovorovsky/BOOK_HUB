@@ -12,7 +12,7 @@
         </tr>
         {% if perms.auth.add_group %} 
         <!-- добавляем постоянные ссылки -->
-        <a href="{% url 'directories:author_create' %}" class="btn btn-outline-success">Create</a>{% endif %}
+        <a href="{% url 'directories:author_create' %}" class="btn btn-outline-success"><i class="bi bi-plus-square-fill"></i></a>{% endif %}
         {% for obj in object_list %}
         <tr>
             <!-- добавляем постоянные ссылки -->
@@ -23,11 +23,25 @@
             <td>
                 {% if perms.auth.add_group %}
                 <!-- добавляем постоянные ссылки -->
-                <a href="{% url 'directories:author_update' obj.pk %}" class="btn btn-outline-primary">Update</a>
-                <a href="{% url 'directories:author_delete' obj.pk %}" class="btn btn-outline-danger">Delete</a>
+                <a href="{% url 'directories:author_update' obj.pk %}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                <a href="{% url 'directories:author_delete' obj.pk %}" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
                 {% endif %}
             </td>
         </tr>
         {% endfor %}
     </table>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><<</a></li>
+          {% endif %}
+          <li class="page-item active"><a class="page-link" href="#">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+          {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">>></a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
+          {% endif %}
+        </ul>
+      </nav>
 {% endblock body %}

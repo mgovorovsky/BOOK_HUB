@@ -9,16 +9,29 @@
             <td>Age limit</td>
             <td>Actions</td>
         </tr>
-        <a href="/directories/agelimit/create/" class="btn btn-outline-success">Create</a>
+        <a href="/directories/agelimit/create/" class="btn btn-outline-success"><i class="bi bi-plus-square-fill"></i></a>
         {% for obj in object_list %}
         <tr>
             <td><a href="/directories/agelimit/{{ obj.pk }}" class="btn btn-link">{{ obj.pk }}</a> </td>
             <td>{{ obj.name }}</td>
             <td>
-                <a href="/directories/agelimit/update/{{ obj.pk }}" class="btn btn-outline-primary">Update</a>
-                <a href="/directories/agelimit/delete/{{ obj.pk }}" class="btn btn-outline-danger">Delete</a>
+                <a href="/directories/agelimit/update/{{ obj.pk }}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                <a href="/directories/agelimit/delete/{{ obj.pk }}" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
             </td>
         </tr>
         {% endfor %}
     </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><<</a></li>
+          {% endif %}
+          <li class="page-item active"><a class="page-link" href="#">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+          {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">>></a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
+          {% endif %}
+        </ul>
+      </nav>
 {% endblock body %}

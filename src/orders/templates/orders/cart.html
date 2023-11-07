@@ -30,7 +30,7 @@
             <td>
                 <form action="{% url 'orders:good_in_cart_delete' good_in_cart.pk %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                    <button type="submit" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
                 </form> 
             </td>
         </tr>
@@ -41,8 +41,8 @@
             <td colspan="2">{{ cart.total_price }}</td>
         </tr>
     </table>
-        <a href="{% url 'directories:bookname_list' %}" class="btn btn-outline-primary">Add a book</a>
-        <a href="{% url 'orders:order_data' %}" class="btn btn-outline-success">Order details</a>
+        <a href="{% url 'directories:bookname_list' %}" class="btn btn-outline-primary"><i class="bi bi-book"></i></a>
+        <a href="{% url 'orders:order_data' %}" class="btn btn-outline-success"><i class="bi bi-check-square"></i></a>
 
 
 

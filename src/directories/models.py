@@ -148,6 +148,21 @@ class BookName(models.Model):
         blank=True
     )
 
+    isbn = models.CharField(
+        verbose_name="ISBN",
+        max_length=20,
+        null=True,
+        blank=True
+    )
+
+    sale_availability = models.BooleanField(
+        verbose_name="Availability",
+        default=True
+    )
+    available_quantity = models.PositiveIntegerField(
+        verbose_name="Quantity",
+        default=10
+    )
     price = models.DecimalField(
         verbose_name="Book price",
         max_digits=6,
