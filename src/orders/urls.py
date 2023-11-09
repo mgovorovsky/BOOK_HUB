@@ -26,9 +26,14 @@ app_name = "orders"
 urlpatterns = [ 
 
     path('cart/', views.cart, name = "order_cart"),
+    path('cart/<int:pk>/', views.Cart.as_view(), name = "order_cart_pk"),
     path('cart-delete-good/<int:pk>', views.DeleteGoodInCart.as_view(), name = "good_in_cart_delete"),
     path('order_success/', views.order_success, name = "order_success"),
     path('order_data/', views.OrderCreate.as_view(), name = "order_data"),
+    path('order_list/', views.OrderList.as_view(), name = "order_list"),
+    path("portal_main/", views.portal_view, name="portal_main"),
+    path('portal_order/delete/<int:pk>/', views.OrderDelete.as_view(), name="portal_order_delete"),
+    path('portal_order/update/<int:pk>/', views.OrderUpdate.as_view(), name="portal_order_update"),
     # path('order_empty/', views.order_success, name = "order_empty"),
 
 ] 

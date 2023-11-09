@@ -62,13 +62,44 @@ def cart(request):
     return render(
         request=request,
         template_name="orders/cart.html",
-        context={"cart": cart}
+        context={"cart": cart},
 
     )
+
+# def cart_upd(self, pk, *args, **kwargs):
+#     pk = pk
+#     cart = update_cart(pk) 
+#     return render(
+#         template_name="orders/cart.html",
+#         context={"cart": cart},
+
+#     )
     
-class Cart(UpdateView):
-    template_name = ""
+class Cart(LoginRequiredMixin, generic.UpdateView):
+    template_name="orders/cart.html"
+    login_url = "/admin/login/"
     model = models.Cart
+    form_class = forms.OrderModelForm
+    success_url = "/orders/order_list/"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "create"
+        return context
+    
+# class CartUpdate(LoginRequiredMixin, generic.UpdateView):
+#     template_name="orders/cart_update.html"
+#     login_url = "/admin/login/"
+#     model = models.Cart
+#     form_class = forms.OrderModelForm
+#     success_url = "/orders/order_list/"
+
+#     def get_context_data(self, *args, **kwargs):
+#         context = super().get_context_data(*args, **kwargs)
+#         context["verb"] = "update"
+#         return context
+    
+
 
 
 class DeleteGoodInCart(DeleteView):
@@ -126,6 +157,42 @@ class OrderCreate(generic.CreateView):
         initial['cart'] = cart
         return initial
     
+
+class OrderList(LoginRequiredMixin, generic.ListView):
+    template_name="orders/portal_order_list.html"
+    login_url = "/admin/login/"
+    model = models.Order
+    paginate_by = 10
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "list"
+        return context
+    
+class OrderDelete(LoginRequiredMixin, generic.DeleteView):
+    template_name="orders/portal_order_delete.html"
+    model = models.Order
+    login_url = "/admin/login/"
+    success_url = "/orders/order_list/" 
+
+class OrderUpdate(LoginRequiredMixin, generic.UpdateView):
+    template_name="orders/portal_order_update.html"
+    model = models.Order
+    login_url = "/admin/login/"
+    form_class = forms.OrderModelForm
+    success_url = "/orders/order_list/" 
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "detail"
+        return context
+    
+
+def portal_view(request):
+    return render(
+        request=request,
+        template_name = "orders/portal_main.html",
+        )
 
 # from .forms import EmailPostForm, CommentForm, SearchForm
 # from haystack.query import SearchQuerySet

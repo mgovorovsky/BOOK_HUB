@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Order {{ verb }} {% endblock title %}
+{% load my_custom_tags %}
+
+{% block body %}
+
+{% if perms.auth.add_group %}
+    
+<h1>Order update:</h1>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <h5>Books in cart:</h5>
+
+    <table class="table table-striped w-50">
+        <tr>
+          <th>Book's name:</th>
+          <th>Quantity:</th>
+          <th>Price:</th>
+          <th>Total price:</th>
+        </tr>
+        {% for i in object.cart.goods.all %}
+          <tr>
+            <td>{{ i.good }} </td>
+            <td>{{ i.quantity }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.total_price }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    <br>
+    {{ form | crispy }}
+    
+    <button type="submit" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>
+</form> 
+{% endif %}
+{% endblock body %}

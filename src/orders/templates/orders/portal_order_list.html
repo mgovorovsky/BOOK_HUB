@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Orders's {{ verb }} {% endblock title %}
+{% load my_custom_tags %}
+
+{% block body %}
+
+{% if perms.auth.add_group %}
+
+<table class="table table-striped">
+  <tr>
+      <td>Order ID</td>
+      <td>Cart ID</td>
+      <td>User name</td>
+      <td>Delivery adress</td>
+      <td>Email adress</td>
+      <td>Telephone</td>
+      <td>Total price</td>
+      <td>Actions</td>
+  </tr>
+  
+  {% for object in object_list %}
+  <tr>
+      <!-- добавляем постоянные ссылки -->
+      <td><a href="" class="btn btn-outline-primary">{{ object.pk }}</a></td>
+      <td><a href="/orders/cart/{{ object.cart.pk }}" class="btn btn-outline-primary">{{ object.cart.pk }}</a></td>
+      <td>{{ object.cart.customer }}</td>
+      <td>{{ object.delivery_adress }}</td>
+      <td>{{ object.email }}</td>
+      <td>{{ object.telephone_number }}</td>
+      <td>{{ object.cart.total_price }}</td>
+
+      <td>
+          {% if perms.auth.add_group %}
+          <!-- добавляем постоянные ссылки -->
+          <a href="{% url 'orders:portal_order_update' object.pk %}" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+          <a href="{% url 'orders:portal_order_delete' object.pk %}" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></a>
+          {% endif %}
+      </td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+<nav aria-label="Page navigation example">
+<ul class="pagination">
+{% if page_obj.has_previous %}
+<li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><<</a></li>
+{% endif %}
+<li class="page-item active"><a class="page-link" href="#">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+{% if page_obj.has_next %}
+<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">>></a></li>
+<li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
+{% endif %}
+</ul>
+</nav>
+
+
+
+
+
+{% endif %}
+{% endblock body %}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load my_custom_tags %}
+
+{% block body %}
+
+{% if perms.auth.add_group %}
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Hello, {{user}}!</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+
+        <h3 class="fs-2 text-body-emphasis">Orders</h3>
+        <a href="{% url 'orders:order_list' %}" class="icon-link">
+          Go to the orders
+          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+
+          <h3 class="fs-2 text-body-emphasis">Copyright holders</h3>
+          <a href="{% url 'directories:copyrightholder_list' %}" class="icon-link">
+            Go to the copyright holders
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+         
+          <h3 class="fs-2 text-body-emphasis">Currencies</h3>
+          <a href="{% url 'directories:currency_list' %}" class="icon-link">
+            Go to the currencies
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          
+          <h3 class="fs-2 text-body-emphasis">Series</h3>
+          <a href="{% url 'directories:series_list' %}" class="icon-link">
+            Go to the series
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+      </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+
+          <h3 class="fs-2 text-body-emphasis">Book's names</h3>
+          <a href="{% url 'directories:bookname_list' %}" class="icon-link">
+            Go to the book's names
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+         
+          <h3 class="fs-2 text-body-emphasis">Authors</h3>
+          <a href="{% url 'directories:author_list' %}" class="icon-link">
+            Go to the authors
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+          
+          <h3 class="fs-2 text-body-emphasis">Genres</h3>
+          <a href="{% url 'directories:genre_list' %}" class="icon-link">
+            Go to the genres
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        
+      </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+
+          <h3 class="fs-2 text-body-emphasis">Book types</h3>
+          <a href="{% url 'directories:booktype_list' %}" class="icon-link">
+            Go to the book types
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+         
+          <h3 class="fs-2 text-body-emphasis">Rating</h3>
+          <a href="{% url 'directories:rating_list' %}" class="icon-link">
+            Go to the rating
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="feature col">
+    
+          <h3 class="fs-2 text-body-emphasis">Age limits</h3>
+          <a href="{% url 'directories:agelimit_list' %}" class="icon-link">
+            Go to the age limits
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+      </div>
+
+     
+
+  </div>
+
+
+
+
+
+{% endif %}
+{% endblock body %}

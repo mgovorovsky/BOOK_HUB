@@ -32,6 +32,8 @@ urlpatterns = [
     path("pass_reset_confirm/", views.MyPasswordResetConfirmView.as_view(), name="pass_reset_confirm"),
     path("pass_reset_complete/", views.MyPasswordResetCompleteView.as_view(), name="pass_reset_complete"),
 
+
+
 ] 
 
 if not settings.IS_PRODUCTION:

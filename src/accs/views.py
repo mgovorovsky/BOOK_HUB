@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.urls import reverse
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 # Create your views here.
 
@@ -28,3 +29,4 @@ class MyPasswordResetConfirmView(auth_views.PasswordResetConfirmView):
 
 class MyPasswordResetCompleteView(auth_views.PasswordResetCompleteView):
     template_name = "registration/password_reset_complete.html"
+

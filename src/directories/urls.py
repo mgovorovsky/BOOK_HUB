@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('currency/<int:pk>/', views.CurrencyDetail.as_view(), name="currency_detail"),
     path('currency/update/<int:pk>/', views.CurrencyUpdate.as_view(), name="currency_update"),
-    path('currency/', views.CurrencyList.as_view(), name="currency_update"),
+    path('currency/', views.CurrencyList.as_view(), name="currency_list"),
     path('currency/create/', views.CurrencyCreate.as_view, name="currency_create"),
     path('currency/delete/<int:pk>/', views.CurrencyDelete.as_view(), name="currency_delete"),
 

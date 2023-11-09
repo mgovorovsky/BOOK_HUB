@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block title %} Order {{ verb }} {% endblock title %}
 {% block body %}
-    <h3>Order #{{ cart_id }} details</h3>
+    <h3>Cart #{{ cart_id }} details</h3>
 
     <table class="table table-striped">
         <tr>
@@ -34,7 +34,7 @@
             <input type="hidden" name="cart_id" value="{{cart_id}}" />
             {{ form | crispy }}
             <a href="{% url 'directories:bookname_list' %}" class="btn btn-outline-primary"><i class="bi bi-book"></i></a>
-            <button type="submit" class="btn btn-outline-success"><i class="bi bi-cart3"></i></button>
+            <button type="submit" class="btn btn-outline-success"><i class="bi bi-truck"></i></button>
         </form> 
     </tr>
     <br>
