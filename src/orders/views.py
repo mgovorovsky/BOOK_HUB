@@ -84,7 +84,7 @@ class Cart(LoginRequiredMixin, generic.UpdateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["verb"] = "create"
+        context["verb"] = "update"
         return context
     
 # class CartUpdate(LoginRequiredMixin, generic.UpdateView):

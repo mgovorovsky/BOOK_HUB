@@ -9,6 +9,7 @@ class OrderModelForm(forms.ModelForm):
     class Meta:
         model = models.Order
         fields = [
+            'cart',
             'delivery_adress',
             'email',
             'telephone_number',
@@ -19,5 +20,5 @@ class CartModelForm(forms.ModelForm):
         model = models.Cart
         fields = [
             'customer',
-
+            
         ]
