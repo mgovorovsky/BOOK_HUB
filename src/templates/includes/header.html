@@ -20,7 +20,7 @@
             </li>
             {% if perms.auth.add_group %}
             <li class="nav-item">
-              <a {% if request.resolver_match.route == "#" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/orders/portal_main">Portal</a> 
+              <a {% if request.resolver_match.route == "orders/portal_main/" %} class="nav-link active" aria-current="page" {% else %} class="nav-link" {% endif %} href="/orders/portal_main">Portal</a> 
             </li>
             {% endif %}
             <li class="nav-item">
@@ -39,7 +39,7 @@
 
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
             <button class="btn btn-outline-success" type="submit">Search</button>
             
           </form>

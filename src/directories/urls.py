@@ -80,6 +80,7 @@ urlpatterns = [
     path('copyrightholder/create/', views.CopyrightHolderCreate.as_view(), name="copyrightholder_create"),
     path('copyrightholder/delete/<int:pk>/', views.CopyrightHolderDelete.as_view(), name="copyrightholder_delete"),
     
+    #path('search', views.Search.as_view(), name="search"),
     
     ] 
 

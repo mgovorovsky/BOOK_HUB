@@ -120,6 +120,8 @@ class AboutUs(LoginRequiredMixin, generic.TemplateView):
 
 
 
+
+
 # User = get_user_model()
 
 # def order_detail(request, pk):

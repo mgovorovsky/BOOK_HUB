@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from random import randint
@@ -472,6 +473,18 @@ def book_types(request):
         template_name="directories/booktype_main.html",
         context={"object": object, "author": author, "genre": genre, "price": price, "rating": rating}
     )
+
+
+
+# class Search(generic.ListView):
+#     paginate_by = 3
+#     def get_queryset(self):
+#         return BookNameList.ordering.filter(title__icintains = self.request.GET.get("q"))
+    
+#     def get_context_data(self, **kwargs):
+#         context =  super().get_context_data(**kwargs)
+#         context["q"] = self.request.GET.get("q")
+#         return context
 
 # def currency_detail(request, pk):
 #    # directories/currency/

@@ -19,11 +19,16 @@ from django.urls import path, include, reverse_lazy
 from applications import views as views
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework import routers
+from applications import views
+from . import apiviews
+
+
+router = routers.SimpleRouter()
+router.register(r'order-api', apiviews.OrderViewSet)
 
 app_name = "applications"
-
 urlpatterns = [ 
-
     path('order/<int:pk>/', views.OrderDetail.as_view(), name = "order_detail"),
     path('order/update/<int:pk>/', views.OrderUpdate.as_view(), name = "order_update"),
     path('order/', views.OrderList.as_view(), name = "order_list"),
@@ -31,7 +36,9 @@ urlpatterns = [
     path('order/delete/<int:pk>/', views.OrderDelete.as_view(), name = "order_delete"),
     path('about-us/', views.AboutUs.as_view()),
 
-] 
+
+]   + router.urls
+
 
 if not settings.IS_PRODUCTION:
     urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

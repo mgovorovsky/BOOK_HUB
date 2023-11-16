@@ -13,7 +13,8 @@
         {% for good_in_cart in cart.goods.all %}
         <tr>
             <td>{{ good_in_cart.good.name }}</td > 
-            <td><form action="{% url 'orders:order_cart' %}">
+            <td><form action="{% url 'orders:order_cart_pk' cart.pk %}" method="post">
+                {% csrf_token %}
                     <div class="input-group mb-1">
                         <input class="form-control" type="number" name="quantity" min="0" step="1" value="{{ good_in_cart.quantity }}">
                         <button type="submit" class="btn btn-outline-secondary">Ok</button>

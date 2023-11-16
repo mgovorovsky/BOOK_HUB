@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views.generic import UpdateView, DeleteView
 from . import models, forms
@@ -87,20 +89,18 @@ class Cart(LoginRequiredMixin, generic.UpdateView):
         context["verb"] = "update"
         return context
     
-# class CartUpdate(LoginRequiredMixin, generic.UpdateView):
-#     template_name="orders/cart_update.html"
-#     login_url = "/admin/login/"
-#     model = models.Cart
-#     form_class = forms.OrderModelForm
-#     success_url = "/orders/order_list/"
+class CartUpdate(LoginRequiredMixin, generic.UpdateView):
+    template_name="orders/cart_update.html"
+    login_url = "/admin/login/"
+    model = models.Cart
+    form_class = forms.OrderModelForm
+    success_url = "/orders/order_list/"
 
-#     def get_context_data(self, *args, **kwargs):
-#         context = super().get_context_data(*args, **kwargs)
-#         context["verb"] = "update"
-#         return context
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["verb"] = "update"
+        return context
     
-
-
 
 class DeleteGoodInCart(DeleteView):
     model = models.GoodInCart
@@ -193,6 +193,8 @@ def portal_view(request):
         request=request,
         template_name = "orders/portal_main.html",
         )
+
+
 
 # from .forms import EmailPostForm, CommentForm, SearchForm
 # from haystack.query import SearchQuerySet

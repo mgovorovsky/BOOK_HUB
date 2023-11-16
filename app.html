@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="main_div">
+    </div>
+
+
+     <script>
+    ourDiv = document.getElementById('main_div')
+    let drowTable = (data) => {
+        
+    }
+    table_html= `
+    <table border="1">
+        <tr>
+            <td>pk</td>
+            <td>user</td>
+            <td>order_bookname</td>
+            <td>summ</td>
+            <td>order_currency</td>
+            <td>cover</td>
+            <td>===</td>
+        </tr>
+        `
+
+    table_html += "</table>"
+    ourDiv.innerHTML = table_html
+    axios.get('http://127.0.0.1:8000/applications/order-api/?format=json')
+        .then(function (response) {
+            // handle success
+            console.log(response.data);
+            drawTable(response.data)
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .finally(function () {
+            // always executed
+        });
+        console.log("привет")
+    </script>
+
+</body>
+</html>
