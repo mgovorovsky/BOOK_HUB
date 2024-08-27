@@ -1,0 +1,1016 @@
+  141  cd ..
+  142  deactivate
+  143  git add .
+  144  git commit -m "models fixed"
+  145  git push
+  146  . ./env/bin/activate
+  147  cd src/ 
+  148  python3 manage.py runserver
+  149  python3 manage.py makemigrations
+  150  python3 manage.py makemigrations
+  151  python3 manage.py migrate
+  152  python3 manage.py runserver
+  153  deactivate
+  154  cd ..
+  155  git add .
+  156  git commit -m "models fixed"
+  157  git push
+  158  . ./env/bin/activate
+  159  cd src/ 
+  160  python3 manage.py runserver
+  161  python3 manage.py runserver
+  162  python3 manage.py makemigrations
+  163  python3 manage.py migrate
+  164  python3 manage.py runserver
+  165  deactivate
+  166  cd ..
+  167  git add .
+  168  git commit -m "models fixed"
+  169  git push
+  170  . ./env/bin/activate
+  171  cd src/ 
+  172  python3 manage.py runserver
+  173  python3 manage.py makemigrations
+  174  python3 manage.py migrate
+  175  python3 manage.py runserver
+  176  python3 manage.py runserver
+  177  python3 manage.py runserver
+  178  python3 manage.py runserver
+  179  python3 manage.py runserver
+  180  python3 manage.py runserver
+  181  python3 manage.py runserver
+  182  python3 manage.py runserver
+  183  python3 manage.py runserver
+  184  python3 manage.py runserver
+  185  python3 manage.py runserver
+  186  python3 manage.py runserver
+  187  python3 manage.py runserver
+  188  python3 manage.py runserver
+  189  python3 manage.py runserver
+  190  python3 manage.py runserver
+  191  python3 manage.py runserver
+  192  python3 manage.py runserver
+  193  python3 manage.py runserver
+  194  python3 manage.py runserver
+  195  python3 manage.py runserver
+  196  python3 manage.py runserver
+  197  python3 manage.py runserver
+  198  python3 manage.py runserver
+  199  python3 manage.py runserver
+  200  python3 manage.py runserver
+  201  python3 manage.py runserver
+  202  python3 manage.py runserver
+  203  python3 manage.py makemigrations
+  204  python3 manage.py runserver
+  205  python3 manage.py migrate
+  206  python3 manage.py runserver
+  207  python3 manage.py runserver
+  208  python3 manage.py runserver
+  209  python3 manage.py runserver
+  210  python3 manage.py runserver
+  211  python3 manage.py runserver
+  212  cd ..
+  213  . ./env/bin/activate
+  214  cd src/
+  215  python3 manage.py runserver
+  216  python3 manage.py runserver
+  217  python3 manage.py runserver
+  218  python3 manage.py runserver
+  219  cd .. 
+  220  deactivate
+  221  git add . 
+  222  git commit -m "main page plus cart/order"
+  223  git push
+  224  . ./env/bin/activate
+  225  cd src/ 
+  226  python3 manage.py runserver
+  227  cd .. 
+  228  deactivate
+  229  git add . 
+  230  git commit -m "cover added"
+  231  git push
+  232  . ./env/bin/activate
+  233  cd src/ 
+  234  python3 manage.py runserver
+  235  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  236  "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/python"
+  237  . ./env/bin/activate
+  238  cd ..
+  239  . ./env/bin/activate
+  240  cd src/ 
+  241  python3 manage.py runserver
+  242  python3 manage.py runserver
+  243  python3 manage.py runserver
+  244  python3 manage.py runserver
+  245  cd ..
+  246  deactivated
+  247  deactivate
+  248  git add .
+  249  git commit -m "permissions started:
+  250  git commit -m "permissions started"
+  251  git push
+  252  . ./env/bin/activate
+  253  cd src/ 
+  254  python3 manage.py makemigration
+  255  python3 manage.py makemigrations
+  256  python3 manage.py migrate
+  257  cd .. 
+  258  deactivate
+  259  git add .
+  260  git commit -m "permissions started"
+  261  git push
+  262  . ./env/bin/activate
+  263  cd src/ 
+  264  python3 manage.py runserver
+  265  python3 manage.py runserver
+  266  python3 manage.py runserver
+  267  python3 manage.py runserver
+  268  shell
+  269  shell
+  270  python3 manage.py runserver
+  271  shell
+  272  bash
+  273  bash shell
+  274  python3 manage.py runserver
+  275  shel
+  276  shell
+  277  schell
+  278  python3 manage.py runserver
+  279  python3 manage.py runserver
+  280  python3 manage.py runserver
+  281  python3 manage.py runserver
+  282  python3 manage.py runserver
+  283  python3 manage.py runserver
+  284  python3 manage.py makemigrations
+  285  python3 manage.py migrate
+  286  python3 manage.py runserver
+  287  python3 manage.py makemigrations
+  288  python3 manage.py migrate
+  289  python3 manage.py runserver
+  290  python3 manage.py runserver
+  291  python3 manage.py runserver
+  292  python3 manage.py runserver
+  293  python3 manage.py runserver
+  294  python3 manage.py runserver
+  295  cd .. 
+  296  deactivate
+  297  deactivate
+  298  cd src/
+  299  deactivate
+  300  cd ..
+  301  deactivate
+  302  git status
+  303  deactivate
+  304  bash
+  305  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  306  cd ..
+  307  cd ..
+  308  deactivate
+  309  git add .
+  310  git commit -m "cover fixed"
+  311  git push
+  312  . ./env/bin/activate
+  313  cd src/
+  314  python3 manage.py runserver
+  315  python3 manage.py runserver
+  316  python3 manage.py runserver
+  317  python3 manage.py runserver
+  318  python3 manage.py runserver
+  319  python3 manage.py runserver
+  320  python3 manage.py runserver
+  321  python3 manage.py runserver
+  322  python3 manage.py runserver
+  323  python3 manage.py makemigrations
+  324  python3 manage.py migrate
+  325  python3 manage.py runserver
+  326  python3 manage.py makemigrations
+  327  python3 manage.py makemigrations
+  328  python3 manage.py migrate
+  329  python3 manage.py runserver
+  330  python3 manage.py makemigrations
+  331  python3 manage.py migrate
+  332  python3 manage.py runserver
+  333  python3 manage.py makemigrations
+  334  python3 manage.py migrate
+  335  python3 manage.py runserver
+  336  python3 manage.py makemigrations
+  337  python3 manage.py makemigrations
+  338  python3 manage.py migrate
+  339  python3 manage.py runserver
+  340  python3 manage.py makemigrations
+  341  python3 manage.py migrate
+  342  python3 manage.py runserver
+  343  python3 manage.py makemigrations
+  344  python3 manage.py runserver
+  345  python3 manage.py makemigrations
+  346  python3 manage.py migrate
+  347  python3 manage.py runserver
+  348  python3 manage.py makemigrations
+  349  python3 manage.py migrate
+  350  python3 manage.py runserver
+  351  python3 manage.py runserver
+  353  python3 manage.py runserver
+  354  python3 manage.py runserver
+  355  python3 manage.py runserver
+  356  python3 manage.py runserver
+  357  python3 manage.py runserver
+  358  python3 manage.py runserver
+  359  cd .. 
+  360  deactivate
+  361  git add .
+  362  git commit -m "cover sizes"
+  363  git push
+  364  . ./env/bin/activate
+  365  cd src/
+  366  python3 manage.py runserver
+  367  python3 manage.py runserver
+  368  pip install from haystack.query import SearchQuerySet
+  369  pip install haystack
+  370  python3 manage.py runserver
+  371  python3 manage.py runserver
+  372  python3 manage.py runserver
+  373  pip install haystack.query
+  374  pip install haystack
+  375  python3 manage.py runserver
+  376  python3 manage.py runserver
+  377  python3 manage.py runserver
+  378  python3 manage.py runserver
+  379  python3 manage.py runserver
+  380  python3 manage.py runserver
+  381  python3 manage.py runserver
+  382  python3 manage.py runserver
+  383  python3 manage.py makemigrations
+  384  python manage.py makemigrations --merge
+  385  python manage.py migrate
+  386  python3 manage.py makemigrations
+  387  python manage.py migrate
+  388  python3 manage.py makemigrations
+  389  python3 manage.py makemigrations
+  390  python3 manage.py makemigrations
+  391  python3 manage.py makemigrations
+  392  python3 manage.py makemigrations
+  393  python3 manage.py migrate
+  394  python3 manage.py runserver
+  395  python3 manage.py makemigrations
+  396  python3 manage.py migrate
+  397  python3 manage.py runserver
+  398  python3 manage.py makemigrations
+  399  python3 manage.py migrate
+  400  python3 manage.py runserver
+  401  python3 manage.py makemigrations
+  402  python3 manage.py migrate
+  403  python3 manage.py runserver
+  404  python3 manage.py runserver
+  405  cd ..
+  406  deactivate
+  407  git add .
+  408  git commit -m "links added"
+  409  git push
+  410  . ./env/bin/activate
+  411  cd src/ 
+  412  python3 manage.py makemigrations
+  413  python3 manage.py runserver
+  414  cd ..
+  415  deactivate
+  416  git add .
+  417  git commit -m "order fixed"
+  418  git push 
+  419  . ./env/bin/activate
+  420  cd src/
+  421  python3 manage.py runserver
+  422  history
+  423  python3 manage.py runserver
+  424  python3 manage.py startapp accs
+  425  python3 manage.py runserver
+  426  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  427  "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/python" "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/src/accs/urls.py"
+  428  cd srs/
+  429  cd src/
+  430  python3 manage.py runserver
+  431  python3 manage.py runserver
+  432  . ./evn/bin/activate
+  433  . ./env/bin/activate
+  434  cd src/ 
+  435  python3 manage.py runserver
+  436  python3 manage.py runserver
+  437  python3 manage.py runserver
+  438  python3 manage.py runserver
+  439  python3 manage.py runserver
+  440  python3 manage.py runserver
+  441  cd ..
+  442  deactivate
+  443  git add . 
+  444  git commit -m "login"
+  445  git push
+  446  . ./env/bin/activate
+  447  cd src/ 
+  448  python3 manage.py runserver
+  449  python3 manage.py runserver
+  450  python3 manage.py runserver
+  451  python3 manage.py runserver
+  452  python3 manage.py runserver
+  453  python3 manage.py runserver
+  454  python3 manage.py runserver
+  455  python3 manage.py runserver
+  456  python3 manage.py runserver
+  457  python3 manage.py runserver
+  458  python3 manage.py runserver
+  459  python3 manage.py runserver
+  460  python3 manage.py runserver
+  461  python3 manage.py runserver
+  462  python3 manage.py runserver
+  463  deactivate
+  464  cd .. 
+  465  git add .
+  466  git commit -m "dark theme"
+  467  git push 
+  468  . ./env/bin/activate
+  469  cd src/ 
+  470  python3 manage.py runserver
+  471  python3 manage.py runserver
+  472  python3 manage.py runserver
+  473  python3 manage.py runserver
+  474  python3 manage.py runserver
+  475  python3 manage.py makemigrations
+  476  python3 manage.py migrate
+  477  python3 manage.py runserver
+  478  python3 manage.py runserver
+  479  python3 manage.py runserver
+  480  cd ..
+  481  cd src/ 
+  482  python3 manage.py runserver
+  483  python3 manage.py runserver
+  484  deactivate
+  485  cd ..
+  486  cd ..
+  487  cd Projects/
+  488  cd book_hub
+  489  . ./env/bin/activate
+  490  cd src/
+  491  python3 manage.py runserver
+  492  python3 manage.py makemigrations
+  493  python3 manage.py migrate
+  494  python3 manage.py makemigrations
+  495  python3 manage.py runserver
+  496  python3 manage.py makemigrations
+  497  python3 manage.py migrate
+  498  python3 manage.py runserver
+  499  python3 manage.py runserver
+  500  python3 manage.py makemigrations
+  501  history
+  502  . ./env/bin/activate
+  503  cd src/ 
+  504  python3 manage.py runserver
+  505  python3 manage.py runserver
+  506  python3 manage.py runserver
+  507  python3 manage.py makemigrations
+  508  python3 manage.py migrate
+  509  python3 manage.py runserver
+  510  python3 manage.py makemigrations
+  511  python3 manage.py runserver
+  512  python3 manage.py runserver
+  513  python3 manage.py migrate
+  514  python3 manage.py runserver
+  515  python3 manage.py makemigrations
+  516  python3 manage.py migrate
+  517  python3 manage.py runserver
+  518  python3 manage.py makemigrations
+  519  python3 manage.py makemigrations
+  520  python3 manage.py migrate
+  521  python3 manage.py makemigrations
+  522  python3 manage.py migrate
+  523  python3 manage.py runserver
+  524  python3 manage.py makemigrations
+  525  python3 manage.py migrate
+  526  python3 manage.py runserver
+  527  python3 manage.py runserver
+  528  python3 manage.py runserver
+  529  cd .. 
+  530  deactivate
+  531  git add .
+  532  git commit -m "icons"
+  533  git push
+  534  history
+  535  . ./env/bin/activate
+  536  cd src/
+  537  python3 manage.py runserver
+  538  python3 manage.py runserver
+  539  python3 manage.py runserver
+  540  python3 manage.py makemigrations
+  541  python3 manage.py runserver
+  542  python3 manage.py runserver
+  543  python3 manage.py runserver
+  544  python3 manage.py runserver
+  545  python3 manage.py runserver
+  546  python3 manage.py runserver
+  547  python3 manage.py runserver
+  548  python3 manage.py runserver
+  549  python3 manage.py runserver
+  550  cd .. 
+  551  deactivate
+  552  git add . 
+  553  git commit -m "portal added"
+  554  git push
+  555  . ./env/bin/activate
+  556  cd src 
+  557  python3 manage.py runserver
+  558  cd .. 
+  559  deactivate
+  560  git add . 
+  561  git commit -m "portal added"
+  562  git push
+  563  . ./env/bin/activate
+  564  cd src 
+  565  python3 manage.py runserver
+  566  cd testing
+  567  cd ..
+  568  cd .. 
+  569  cd testing
+  570  cd book_hub
+  571  dezctivate
+  572  dezctivate
+  573  history
+  574  deactivate
+  575  python -m unittest test
+  576  python -m unittest discover
+  577  . ./env/bin/activate
+  578  python -m unittest discover
+  579     python3 manage.py test polls
+  580  src/
+  581  cd src/
+  582     python3 manage.py test polls
+  583   python3 manage.py test polls
+  584  cd .. 
+  585  pip install silenium
+  586  pip install selenium
+  587  pip freeze > requirements.txt
+  588  pip install djangorestframework
+  589  pip install markdown
+  590  pip freeze > requirements.txt
+  591  cd src/
+  592  python3 manage.py runserver
+  593* 
+  594  python3 manage.py runserver
+  595  python3 manage.py runserver
+  596  python3 manage.py runserver
+  597  python3 manage.py runserver
+  598  python3 manage.py runserver
+  599  python3 manage.py runserver
+  600  python3 manage.py runserver
+  601  python3 manage.py runserver
+  602  pip install django-cors-headers
+  603  python3 manage.py runserver
+  604  cd .. 
+  605  deactivate
+  606  git add . 
+  607  git commit -m "book quant."
+  608  git push
+  609  pip freeze > reauirements.txt
+  610  hystory
+  611  history
+MacBook:book_hub mgovorovsky$ . ./env/bin/activate
+(env) MacBook:book_hub mgovorovsky$ pip freeze > requirements.txt
+(env) MacBook:book_hub mgovorovsky$ git add .
+(env) MacBook:book_hub mgovorovsky$ git commit -m "2"
+[master e363260] 2
+ 2 files changed, 1 insertion(+)
+ create mode 100644 reauirements.txt
+(env) MacBook:book_hub mgovorovsky$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 333 bytes | 333.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/mgovorovsky/BOOK_HUB.git
+   34db175..e363260  master -> master
+(env) MacBook:book_hub mgovorovsky$ cd src/
+(env) MacBook:src mgovorovsky$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+Error: That port is already in use.
+(env) MacBook:src mgovorovsky$ 
+(env) MacBook:src mgovorovsky$ 
+(env) MacBook:src mgovorovsky$ 
+(env) MacBook:src mgovorovsky$ 
+(env) MacBook:src mgovorovsky$ deactivate
+MacBook:src mgovorovsky$ cd 
+.DS_Store      applications/  directories/   orders/        random_number/ templates/     
+accs/          db.sqlite3     manage.py      proj/          static/        
+MacBook:src mgovorovsky$ cd 
+MacBook:src mgovorovsky$ . ./env/bin/activate
+bash: ./env/bin/activate: No such file or directory
+MacBook:src mgovorovsky$ cd ..
+MacBook:book_hub mgovorovsky$ . ./env/bin/activate
+(env) MacBook:book_hub mgovorovsky$ cd src/ 
+(env) MacBook:src mgovorovsky$ python3 manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+Error: That port is already in use.
+(env) MacBook:src mgovorovsky$ cd ..
+(env) MacBook:book_hub mgovorovsky$ history
+  127  python3 manage.py runserver
+  128  git status
+  129  cd ..
+  130  deactivate
+  131  git pull 
+  132  git fetch
+  133  git merge
+  134  . ./env/bin/activate
+  135  cd src/ 
+  136  python3 manage.py runserver
+  137  python3 manage.py makemigrations
+  138  python3 manage.py migrate
+  139  python3 manage.py runserver
+  140  python3 manage.py runserver
+  141  cd ..
+  142  deactivate
+  143  git add .
+  144  git commit -m "models fixed"
+  145  git push
+  146  . ./env/bin/activate
+  147  cd src/ 
+  148  python3 manage.py runserver
+  149  python3 manage.py makemigrations
+  150  python3 manage.py makemigrations
+  151  python3 manage.py migrate
+  152  python3 manage.py runserver
+  153  deactivate
+  154  cd ..
+  155  git add .
+  156  git commit -m "models fixed"
+  157  git push
+  158  . ./env/bin/activate
+  159  cd src/ 
+  160  python3 manage.py runserver
+  161  python3 manage.py runserver
+  162  python3 manage.py makemigrations
+  163  python3 manage.py migrate
+  164  python3 manage.py runserver
+  165  deactivate
+  166  cd ..
+  167  git add .
+  168  git commit -m "models fixed"
+  169  git push
+  170  . ./env/bin/activate
+  171  cd src/ 
+  172  python3 manage.py runserver
+  173  python3 manage.py makemigrations
+  174  python3 manage.py migrate
+  175  python3 manage.py runserver
+  176  python3 manage.py runserver
+  177  python3 manage.py runserver
+  178  python3 manage.py runserver
+  179  python3 manage.py runserver
+  180  python3 manage.py runserver
+  181  python3 manage.py runserver
+  182  python3 manage.py runserver
+  183  python3 manage.py runserver
+  184  python3 manage.py runserver
+  185  python3 manage.py runserver
+  186  python3 manage.py runserver
+  187  python3 manage.py runserver
+  188  python3 manage.py runserver
+  189  python3 manage.py runserver
+  190  python3 manage.py runserver
+  191  python3 manage.py runserver
+  192  python3 manage.py runserver
+  193  python3 manage.py runserver
+  194  python3 manage.py runserver
+  195  python3 manage.py runserver
+  196  python3 manage.py runserver
+  197  python3 manage.py runserver
+  198  python3 manage.py runserver
+  199  python3 manage.py runserver
+  200  python3 manage.py runserver
+  201  python3 manage.py runserver
+  202  python3 manage.py runserver
+  203  python3 manage.py makemigrations
+  204  python3 manage.py runserver
+  205  python3 manage.py migrate
+  206  python3 manage.py runserver
+  207  python3 manage.py runserver
+  208  python3 manage.py runserver
+  209  python3 manage.py runserver
+  210  python3 manage.py runserver
+  211  python3 manage.py runserver
+  212  cd ..
+  213  . ./env/bin/activate
+  214  cd src/
+  215  python3 manage.py runserver
+  216  python3 manage.py runserver
+  217  python3 manage.py runserver
+  218  python3 manage.py runserver
+  219  cd .. 
+  220  deactivate
+  221  git add . 
+  222  git commit -m "main page plus cart/order"
+  223  git push
+  224  . ./env/bin/activate
+  225  cd src/ 
+  226  python3 manage.py runserver
+  227  cd .. 
+  228  deactivate
+  229  git add . 
+  230  git commit -m "cover added"
+  231  git push
+  232  . ./env/bin/activate
+  233  cd src/ 
+  234  python3 manage.py runserver
+  235  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  236  "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/python"
+  237  . ./env/bin/activate
+  238  cd ..
+  239  . ./env/bin/activate
+  240  cd src/ 
+  241  python3 manage.py runserver
+  242  python3 manage.py runserver
+  243  python3 manage.py runserver
+  244  python3 manage.py runserver
+  245  cd ..
+  246  deactivated
+  247  deactivate
+  248  git add .
+  249  git commit -m "permissions started:
+  250  git commit -m "permissions started"
+  251  git push
+  252  . ./env/bin/activate
+  253  cd src/ 
+  254  python3 manage.py makemigration
+  255  python3 manage.py makemigrations
+  256  python3 manage.py migrate
+  257  cd .. 
+  258  deactivate
+  259  git add .
+  260  git commit -m "permissions started"
+  261  git push
+  262  . ./env/bin/activate
+  263  cd src/ 
+  264  python3 manage.py runserver
+  265  python3 manage.py runserver
+  266  python3 manage.py runserver
+  267  python3 manage.py runserver
+  268  shell
+  269  shell
+  270  python3 manage.py runserver
+  271  shell
+  272  bash
+  273  bash shell
+  274  python3 manage.py runserver
+  275  shel
+  276  shell
+  277  schell
+  278  python3 manage.py runserver
+  279  python3 manage.py runserver
+  280  python3 manage.py runserver
+  281  python3 manage.py runserver
+  282  python3 manage.py runserver
+  283  python3 manage.py runserver
+  284  python3 manage.py makemigrations
+  285  python3 manage.py migrate
+  286  python3 manage.py runserver
+  287  python3 manage.py makemigrations
+  288  python3 manage.py migrate
+  289  python3 manage.py runserver
+  290  python3 manage.py runserver
+  291  python3 manage.py runserver
+  292  python3 manage.py runserver
+  293  python3 manage.py runserver
+  294  python3 manage.py runserver
+  295  cd .. 
+  296  deactivate
+  297  deactivate
+  298  cd src/
+  299  deactivate
+  300  cd ..
+  301  deactivate
+  302  git status
+  303  deactivate
+  304  bash
+  305  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  306  cd ..
+  307  cd ..
+  308  deactivate
+  309  git add .
+  310  git commit -m "cover fixed"
+  311  git push
+  312  . ./env/bin/activate
+  313  cd src/
+  314  python3 manage.py runserver
+  315  python3 manage.py runserver
+  316  python3 manage.py runserver
+  317  python3 manage.py runserver
+  318  python3 manage.py runserver
+  319  python3 manage.py runserver
+  320  python3 manage.py runserver
+  321  python3 manage.py runserver
+  322  python3 manage.py runserver
+  323  python3 manage.py makemigrations
+  324  python3 manage.py migrate
+  325  python3 manage.py runserver
+  326  python3 manage.py makemigrations
+  327  python3 manage.py makemigrations
+  328  python3 manage.py migrate
+  329  python3 manage.py runserver
+  330  python3 manage.py makemigrations
+  331  python3 manage.py migrate
+  332  python3 manage.py runserver
+  333  python3 manage.py makemigrations
+  334  python3 manage.py migrate
+  335  python3 manage.py runserver
+  336  python3 manage.py makemigrations
+  337  python3 manage.py makemigrations
+  338  python3 manage.py migrate
+  339  python3 manage.py runserver
+  340  python3 manage.py makemigrations
+  341  python3 manage.py migrate
+  342  python3 manage.py runserver
+  343  python3 manage.py makemigrations
+  344  python3 manage.py runserver
+  345  python3 manage.py makemigrations
+  346  python3 manage.py migrate
+  347  python3 manage.py runserver
+  348  python3 manage.py makemigrations
+  349  python3 manage.py migrate
+  350  python3 manage.py runserver
+  351  python3 manage.py runserver
+  353  python3 manage.py runserver
+  354  python3 manage.py runserver
+  355  python3 manage.py runserver
+  356  python3 manage.py runserver
+  357  python3 manage.py runserver
+  358  python3 manage.py runserver
+  359  cd .. 
+  360  deactivate
+  361  git add .
+  362  git commit -m "cover sizes"
+  363  git push
+  364  . ./env/bin/activate
+  365  cd src/
+  366  python3 manage.py runserver
+  367  python3 manage.py runserver
+  368  pip install from haystack.query import SearchQuerySet
+  369  pip install haystack
+  370  python3 manage.py runserver
+  371  python3 manage.py runserver
+  372  python3 manage.py runserver
+  373  pip install haystack.query
+  374  pip install haystack
+  375  python3 manage.py runserver
+  376  python3 manage.py runserver
+  377  python3 manage.py runserver
+  378  python3 manage.py runserver
+  379  python3 manage.py runserver
+  380  python3 manage.py runserver
+  381  python3 manage.py runserver
+  382  python3 manage.py runserver
+  383  python3 manage.py makemigrations
+  384  python manage.py makemigrations --merge
+  385  python manage.py migrate
+  386  python3 manage.py makemigrations
+  387  python manage.py migrate
+  388  python3 manage.py makemigrations
+  389  python3 manage.py makemigrations
+  390  python3 manage.py makemigrations
+  391  python3 manage.py makemigrations
+  392  python3 manage.py makemigrations
+  393  python3 manage.py migrate
+  394  python3 manage.py runserver
+  395  python3 manage.py makemigrations
+  396  python3 manage.py migrate
+  397  python3 manage.py runserver
+  398  python3 manage.py makemigrations
+  399  python3 manage.py migrate
+  400  python3 manage.py runserver
+  401  python3 manage.py makemigrations
+  402  python3 manage.py migrate
+  403  python3 manage.py runserver
+  404  python3 manage.py runserver
+  405  cd ..
+  406  deactivate
+  407  git add .
+  408  git commit -m "links added"
+  409  git push
+  410  . ./env/bin/activate
+  411  cd src/ 
+  412  python3 manage.py makemigrations
+  413  python3 manage.py runserver
+  414  cd ..
+  415  deactivate
+  416  git add .
+  417  git commit -m "order fixed"
+  418  git push 
+  419  . ./env/bin/activate
+  420  cd src/
+  421  python3 manage.py runserver
+  422  history
+  423  python3 manage.py runserver
+  424  python3 manage.py startapp accs
+  425  python3 manage.py runserver
+  426  source "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/activate"
+  427  "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/env/bin/python" "/Users/mgovorovsky/Work/IT Academy/Projects/book_hub/src/accs/urls.py"
+  428  cd srs/
+  429  cd src/
+  430  python3 manage.py runserver
+  431  python3 manage.py runserver
+  432  . ./evn/bin/activate
+  433  . ./env/bin/activate
+  434  cd src/ 
+  435  python3 manage.py runserver
+  436  python3 manage.py runserver
+  437  python3 manage.py runserver
+  438  python3 manage.py runserver
+  439  python3 manage.py runserver
+  440  python3 manage.py runserver
+  441  cd ..
+  442  deactivate
+  443  git add . 
+  444  git commit -m "login"
+  445  git push
+  446  . ./env/bin/activate
+  447  cd src/ 
+  448  python3 manage.py runserver
+  449  python3 manage.py runserver
+  450  python3 manage.py runserver
+  451  python3 manage.py runserver
+  452  python3 manage.py runserver
+  453  python3 manage.py runserver
+  454  python3 manage.py runserver
+  455  python3 manage.py runserver
+  456  python3 manage.py runserver
+  457  python3 manage.py runserver
+  458  python3 manage.py runserver
+  459  python3 manage.py runserver
+  460  python3 manage.py runserver
+  461  python3 manage.py runserver
+  462  python3 manage.py runserver
+  463  deactivate
+  464  cd .. 
+  465  git add .
+  466  git commit -m "dark theme"
+  467  git push 
+  468  . ./env/bin/activate
+  469  cd src/ 
+  470  python3 manage.py runserver
+  471  python3 manage.py runserver
+  472  python3 manage.py runserver
+  473  python3 manage.py runserver
+  474  python3 manage.py runserver
+  475  python3 manage.py makemigrations
+  476  python3 manage.py migrate
+  477  python3 manage.py runserver
+  478  python3 manage.py runserver
+  479  python3 manage.py runserver
+  480  cd ..
+  481  cd src/ 
+  482  python3 manage.py runserver
+  483  python3 manage.py runserver
+  484  deactivate
+  485  cd ..
+  486  cd ..
+  487  cd Projects/
+  488  cd book_hub
+  489  . ./env/bin/activate
+  490  cd src/
+  491  python3 manage.py runserver
+  492  python3 manage.py makemigrations
+  493  python3 manage.py migrate
+  494  python3 manage.py makemigrations
+  495  python3 manage.py runserver
+  496  python3 manage.py makemigrations
+  497  python3 manage.py migrate
+  498  python3 manage.py runserver
+  499  python3 manage.py runserver
+  500  python3 manage.py makemigrations
+  501  history
+  502  . ./env/bin/activate
+  503  cd src/ 
+  504  python3 manage.py runserver
+  505  python3 manage.py runserver
+  506  python3 manage.py runserver
+  507  python3 manage.py makemigrations
+  508  python3 manage.py migrate
+  509  python3 manage.py runserver
+  510  python3 manage.py makemigrations
+  511  python3 manage.py runserver
+  512  python3 manage.py runserver
+  513  python3 manage.py migrate
+  514  python3 manage.py runserver
+  515  python3 manage.py makemigrations
+  516  python3 manage.py migrate
+  517  python3 manage.py runserver
+  518  python3 manage.py makemigrations
+  519  python3 manage.py makemigrations
+  520  python3 manage.py migrate
+  521  python3 manage.py makemigrations
+  522  python3 manage.py migrate
+  523  python3 manage.py runserver
+  524  python3 manage.py makemigrations
+  525  python3 manage.py migrate
+  526  python3 manage.py runserver
+  527  python3 manage.py runserver
+  528  python3 manage.py runserver
+  529  cd .. 
+  530  deactivate
+  531  git add .
+  532  git commit -m "icons"
+  533  git push
+  534  history
+  535  . ./env/bin/activate
+  536  cd src/
+  537  python3 manage.py runserver
+  538  python3 manage.py runserver
+  539  python3 manage.py runserver
+  540  python3 manage.py makemigrations
+  541  python3 manage.py runserver
+  542  python3 manage.py runserver
+  543  python3 manage.py runserver
+  544  python3 manage.py runserver
+  545  python3 manage.py runserver
+  546  python3 manage.py runserver
+  547  python3 manage.py runserver
+  548  python3 manage.py runserver
+  549  python3 manage.py runserver
+  550  cd .. 
+  551  deactivate
+  552  git add . 
+  553  git commit -m "portal added"
+  554  git push
+  555  . ./env/bin/activate
+  556  cd src 
+  557  python3 manage.py runserver
+  558  cd .. 
+  559  deactivate
+  560  git add . 
+  561  git commit -m "portal added"
+  562  git push
+  563  . ./env/bin/activate
+  564  cd src 
+  565  python3 manage.py runserver
+  566  cd testing
+  567  cd ..
+  568  cd .. 
+  569  cd testing
+  570  cd book_hub
+  571  dezctivate
+  572  dezctivate
+  573  history
+  574  deactivate
+  575  python -m unittest test
+  576  python -m unittest discover
+  577  . ./env/bin/activate
+  578  python -m unittest discover
+  579     python3 manage.py test polls
+  580  src/
+  581  cd src/
+  582     python3 manage.py test polls
+  583   python3 manage.py test polls
+  584  cd .. 
+  585  pip install silenium
+  586  pip install selenium
+  587  pip freeze > requirements.txt
+  588  pip install djangorestframework
+  589  pip install markdown
+  590  pip freeze > requirements.txt
+  591  cd src/
+  592  python3 manage.py runserver
+  593* 
+  594  python3 manage.py runserver
+  595  python3 manage.py runserver
+  596  python3 manage.py runserver
+  597  python3 manage.py runserver
+  598  python3 manage.py runserver
+  599  python3 manage.py runserver
+  600  python3 manage.py runserver
+  601  python3 manage.py runserver
+  602  pip install django-cors-headers
+  603  python3 manage.py runserver
+  604  cd .. 
+  605  deactivate
+  606  git add . 
+  607  git commit -m "book quant."
+  608  git push
+  609  pip freeze > reauirements.txt
+  610  hystory
+  611  history
+  612  . ./env/bin/activate
+  613  pip freeze > requirements.txt
+  614  git add .
+  615  git commit -m "2"
+  616  git push
+  617  cd src/
+  618  python3 manage.py runserver
+  619  deactivate
+  620  . ./env/bin/activate
+  621  cd ..
+  622  . ./env/bin/activate
+  623  cd src/ 
+  624  python3 manage.py runserver
+  625  cd ..
+  626  history
+(env) MacBook:book_hub mgovorovsky$ 

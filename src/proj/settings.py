@@ -29,7 +29,7 @@ DEBUG = local_settings.DEBUG
 
 IS_PRODUCTION =local_settings.IS_PRODUCTION
 
-ALLOWED_HOSTS = ['mgovorovsky.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mgovorovsky.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition

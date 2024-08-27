@@ -7,16 +7,45 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <div id="form_div">
+        <input type="text" id="user"><br>
+        <input type="text" id="order_bookname"><br>
+        <input type="number" id="summ"><br>
+        <input type="text" id="order_currency"><br>
+        <button onclick="createButtonClicked()" type="button">Create</button>
+    </div>
+    <div id="form_div">
+    </div>
+
+
     <div id="main_div">
     </div>
 
 
      <script>
     ourDiv = document.getElementById('main_div')
-    let drowTable = (data) => {
-        
+    let drawPlaceHolder = (data) => {
+        ourDiv.innerHTML = ""
+        ourDiv.innerHTML = "<h1>Please wait data being loaded"
+        setTimeout(drawTable, 500, data)
     }
-    table_html= `
+
+    let delRow = (objectPK) => {
+        axios.delete('http://127.0.0.1:8000/applications/order-api/${objectPK}')
+        .then(function (response) {
+            // handle success
+            console.log(response.data);
+            getAndDrawTable()
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
+
+    let drawTable = (data) => {
+        ourDiv.innerHTML = ""
+        table_html= `
     <table border="1">
         <tr>
             <td>pk</td>
@@ -25,17 +54,36 @@
             <td>summ</td>
             <td>order_currency</td>
             <td>cover</td>
-            <td>===</td>
+            <td>======</td>
+
         </tr>
         `
+        data.forEach(element => {
+            table_html += `
+            <tr>
+            <td>${element.pk}</td>
+            <td>${element.user}</td>
+            <td>${element.order_bookname}</td>
+            <td>${element.summ}</td>
+            <td>${element.order_currency}</td>
+            <td>${element.cover}</td>
+            <td><button type="button" onclick="delRow(${element.pk})">Del</button></td>
 
+            <td></td>
+
+        </tr>
+        ` 
+        });
     table_html += "</table>"
     ourDiv.innerHTML = table_html
-    axios.get('http://127.0.0.1:8000/applications/order-api/?format=json')
+        
+    }
+    let getAndDrawTable = () => {
+    axios.get('http://127.0.0.1:8000/applications/order-api/')
         .then(function (response) {
             // handle success
             console.log(response.data);
-            drawTable(response.data)
+            drawPlaceHolder(response.data)
         })
         .catch(function (error) {
             // handle error
@@ -44,7 +92,32 @@
         .finally(function () {
             // always executed
         });
+    }
         console.log("привет")
+    
+    let createButtonClicked = () => { 
+        axios.post('http://127.0.0.1:8000/applications/order-api/', data={
+            "user": userInput.value,
+            "order_bookname": order_booknameInput.value,
+            "summ": summInput.value,
+            "order_currency": order_currencyInput.value,
+        })
+        .then(function (response) {
+            // handle success
+            console.log(response.data);
+            drawPlaceHolder(response.data)
+            getAndDrawTable(response.data)
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+
+
+    }
+
+    getAndDrawTable()
+
     </script>
 
 </body>
